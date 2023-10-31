@@ -1,0 +1,18 @@
+.lessections, .lessections *{background-color: #fff;}
+.size-1{font-size: 1rem;}
+.size-2{font-size: 2rem;}
+.size-3{font-size: 3rem;}
+.size-4{font-size: 4rem;}
+.size-5{font-size: 5rem;}
+/* Styles par défaut pour la largeur de l'aside */
+aside.flex-column{min-width: 220px;max-width: 220px;transition: all 0.5s;}
+.text-menu{font-style: normal;font-size: 15pt;margin-left: 0;}
+a.a-menu{text-decoration: none;}
+/* Styles pour les écrans plus petits que 992px */
+@media (max-width: 767.98px) {
+    aside.flex-column{min-width: 80px;max-width: 80px;}
+    .text-menu {display: none;opacity: 0;}
+    
+}
+div#profile{cursor: pointer;}
+/* Styles pour étendre la hauteur de la section */

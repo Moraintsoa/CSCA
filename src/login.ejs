@@ -1,0 +1,78 @@
+<style>
+  div label.form-label{
+    font-size: 13px;
+  }
+</style>
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="img/logo.png" class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form action="/login" method="post" id="formlogin">
+          <div class="d-flex align-items-center my-4">
+            <h3>Se connecter</h3>
+          </div>
+
+          <!-- Eto Pseudo -->
+          <div class="form-outline mb-4  has-validation">
+            <input type="text" id="pseudoutilisateur" name="pseudoutilisateur" class="form-control form-control-lg shadow-sm"
+              placeholder="ex : rakot123" />
+            <label class="form-label mt-1" id="labelpseudo" for="pseudoutilisateur">Votre Pseudo</label>
+          </div>
+
+          <!-- Eto mot de passe -->
+          <div class="form-outline mb-3  has-validation">
+            <input type="password" id="motdepassutilisateur" name="motdepassutilisateur" class="form-control form-control-lg shadow-sm"
+              placeholder="Mot de passe" />
+            <label class="form-label mt-1" id="labelmdp" for="motdepassutilisateur">Votre mot de passe</label>
+          </div>
+
+          <div class="d-flex justify-content-start align-items-center">
+                <a href="/reset" class="text-body">Mot de passe oublié?</a>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-bleu btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Se
+              connecter
+            </button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Vous n'avez pas de compte? <a href="/register" class="link-danger">Creer un
+                compte</a></p>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+const formlogin = document.querySelector("#formlogin");
+const pseudo = document.querySelector("#pseudoutilisateur");
+const mdp = document.querySelector("#motdepassutilisateur");
+const labelPseudo = document.querySelector("#labelpseudo");
+const labelMDP = document.querySelector("#labelmdp");
+
+formlogin.addEventListener("submit", function (event) {
+  if (pseudo.value.trim() === "") {
+    labelPseudo.innerHTML = "Remplir le champ par un Pseudo ou un Email";
+    labelPseudo.classList.add("invalid-feedback")
+    pseudo.classList.add("is-invalid")
+    event.preventDefault(); // Empêcher l'envoi du formulaire
+  }
+  if (mdp.value.trim() === "") {
+    labelMDP.innerHTML = "Remplir le champ par votre mot de passe";
+    labelMDP.classList.add("invalid-feedback")
+    mdp.classList.add("is-invalid")
+    event.preventDefault(); // Empêcher l'envoi du formulaire
+  }
+});
+pseudo.addEventListener("focus",()=>{
+  labelPseudo.classList.remove("invalid-feedback")
+  labelPseudo.innerHTML = "Votre Pseudo";
+})
+mdp.addEventListener("focus",()=>{
+  labelMDP.classList.remove("invalid-feedback")
+  labelMDP.innerHTML = "Votre mot de passe";
+})
+</script>

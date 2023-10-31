@@ -1,0 +1,14 @@
+body {
+  min-height: -webkit-fill-available;
+  min-height: 100vh
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+aside {
+  height: -webkit-fill-available;
+  height: calc(100vh - 105px);
+  max-height: calc(100vh - 105px);
+}
