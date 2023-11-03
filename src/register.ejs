@@ -1,137 +1,168 @@
 <style>
-  div label.form-label{
+  div label.form-label {
     font-size: 13px;
   }
 </style>
 <section class="vh-100">
-    <div class="container-fluid h-custom">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-md-9 col-lg-6 col-xl-5">
-          <img src="img/logo.png" class="img-fluid" alt="Sample image">
-        </div>
-        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form action="/register" method="post" id="formregister">
-            <div class="d-flex align-items-center my-4">
-              <h3>Creer un compte</h3>
-            </div>
-  
-            <!-- Eto Pseudo -->
-            <div class="form-outline mb-1 has-validation" id="divpseudo">
-              <input type="text" id="pseudo" name="pseudo" class="form-control form-control-lg shadow-sm "
-                placeholder="ex : rakoto123"  />
-              <label class="mt-1 form-label " for="pseudo" id="labelpseudo">Votre Pseudo.</label>
-            </div>
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="img/logo.png" class="img-fluid" alt="Image d'exemple">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form action="/register" method="post" id="formregister">
+          <div class="d-flex align-items-center my-4">
+            <h3>Créer un compte</h3>
+          </div>
 
-            <!-- Eto Email -->
-            <div class="form-outline mb-1 has-validation" id="divemail">
-                <input type="email" id="email" name="email" class="form-control form-control-lg shadow-sm "
-                  placeholder="ex : rakoto123@gmail.com"  />
-                <label class="mt-1 form-label " for="email" id="labelemail">Votre Email.</label>
+          <!-- Ici nip -->
+          <div class="form-outline mb-1 has-validation" id="divnip">
+            <div class="input-group">
+              <select class="form-select" id="organisation" name="organisation">
+                <option value="">Votre organisation</option>
+                <option value="PAC">PAC</option>
+                <option value="BIANCO">BIANCO</option>
+                <option value="SAMFIN">SAMFIN</option>
+              </select>
+              <input type="number" name="nip" id="nip" class="form-control form-control-lg shadow-sm" placeholder="Ex: 0001">
             </div>
-  
-            <!-- Eto Mot de passe -->
-            <div class="form-outline mb-1 has-validation" id="divmotdepass">
-              <input type="password" id="motdepass" name="motdepass" class="form-control form-control-lg shadow-sm "
-                placeholder="mot de passe"/>
-              <label class="mt-1 form-label " for="motdepass" id="labelmotdepass">Votre Mot de passe.</label>
+            <label class="form-label mt-1" id="labelnip" for="nip">Votre numéro d'identification personnel</label>
+          </div>
+          <!-- Ici NomPrenom -->
+          <div class="form-outline mb-1 has-validation" id="divnomprenom">
+            <div class="input-group">
+              <input type="text" name="nom" id="nom" class="form-control form-control-lg shadow-sm" placeholder="Nom">
+              <input type="text" name="prenom" id="prenom" class="form-control form-control-lg shadow-sm" placeholder="Prénom (facultatif)">
             </div>
+            <label class="form-label mt-1" id="labelnomprenom" for="nom">Votre Nom et Prénom</label>
+          </div>
+          <!-- Ici Email -->
+          <div class="form-outline mb-1 has-validation" id="divemail">
+            <input type="email" id="email" name="email" class="form-control form-control-lg shadow-sm "
+              placeholder="Ex : rakoto123@gmail.com" />
+            <label class="mt-1 form-label" for="email" id="labelemail">Votre Email.</label>
+          </div>
 
-            <!-- Eto confirmation Mot de passe -->
-            <div class="form-outline mb-1 has-validation" id="divconfirmationmotdepass">
-                <input type="password" id="confirmationmotdepass" name="confirmationmotdepass" class="form-control form-control-lg shadow-sm "
-                  placeholder="Confirmer"/>
-                <label class="mt-1 form-label " for="confirmationmotdepass" id="labelconfirmationmotdepass">Votre Mot de passe, confirmer le.</label>
-              </div>
-  
-            <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="submit" class="btn btn-bleu btn-lg"
-                style="padding-left: 2.5rem; padding-right: 2.5rem;">Se connecter
-              </button>
-              <p class="small fw-bold mt-2 pt-1 mb-0">Vous avez deja un compte? <a href="/login"
-                  class="link-danger">Se connecter</a></p>
-            </div>
-  
-          </form>
-        </div>
+          <!-- Ici Mot de passe -->
+          <div class="form-outline mb-1 has-validation" id="divmotdepass">
+            <input type="password" id="motdepass" name="motdepass" class="form-control form-control-lg shadow-sm "
+              placeholder="Mot de passe" />
+            <label class="mt-1 form-label" for="motdepass" id="labelmotdepass">Votre Mot de passe.</label>
+          </div>
+
+          <!-- Ici confirmation Mot de passe -->
+          <div class="form-outline mb-1 has-validation" id="divconfirmationmotdepass">
+            <input type="password" id="confirmationmotdepass" name="confirmationmotdepass"
+              class="form-control form-control-lg shadow-sm " placeholder="Confirmer" />
+            <label class="mt-1 form-label" for="confirmationmotdepass" id="labelconfirmationmotdepass">Votre Mot de passe, confirmez-le.</label>
+          </div>
+          <% if (errorMessage) { %>
+          <div class="alert alert-danger py-1">
+            <%= errorMessage %>
+          </div>
+          <% } %>
+
+          <% if (successMessage) { %>
+          <div class="alert alert-success py-1">
+            <%= successMessage %>
+          </div>
+          <% } %>
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-bleu btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">S'inscrire</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Vous avez déjà un compte ? <a href="/login" class="link-danger">Se connecter</a></p>
+          </div>
+
+        </form>
       </div>
     </div>
-  </section>
-  <script>
-const divpseudo = document.querySelector("#divpseudo");
-const divemail = document.querySelector("#divemail");
-const divmotdepass = document.querySelector("#divmotdepass");
-const divconfirmationmotdepass = document.querySelector("#divconfirmationmotdepass");
+  </div>
+</section>
+<script>
+  const divnip = document.querySelector("#divnip");
+  const divemail = document.querySelector("#divemail");
+  const divmotdepass = document.querySelector("#divmotdepass");
+  const divconfirmationmotdepass = document.querySelector("#divconfirmationmotdepass");
+  const divnomprenom = document.querySelector("#divnomprenom")
 
-const formregister = document.querySelector("#formregister");
-const pseudo = document.querySelector("#pseudo");
-const email = document.querySelector("#email");
-const mdp = document.querySelector("#motdepass");
-const confirmationMdp = document.querySelector("#confirmationmotdepass");
+  const formregister = document.querySelector("#formregister");
+  const nip = document.querySelector("#nip");
+  const organisation = document.querySelector("#organisation");
+  const nom = document.querySelector("#nom");
+  const prenom = document.querySelector("#prenom");
+  const email = document.querySelector("#email");
+  const mdp = document.querySelector("#motdepass");
+  const confirmationMdp = document.querySelector("#confirmationmotdepass");
 
-const labelpseudo = document.querySelector("#labelpseudo");
-const labelemail = document.querySelector("#labelemail");
-const labelmdp = document.querySelector("#labelmotdepass");
-const labelconfirmationMdp = document.querySelector("#labelconfirmationmotdepass");
+  const labelnip = document.querySelector("#labelnip");
+  const labelemail = document.querySelector("#labelemail");
+  const labelmdp = document.querySelector("#labelmotdepass");
+  const labelconfirmationMdp = document.querySelector("#labelconfirmationmotdepass");
+  const labelnomprenom = document.querySelector("#labelnomprenom");
 
-const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
-function validerEmail(email) {
-  return regex.test(email);
-}
-
-function afficherErreur(champ, label, message) {
-  label.innerHTML = message;
-  label.classList.add("invalid-feedback");
-  champ.classList.add("is-invalid");
-}
-
-function supprimerErreur(champ, label) {
-  label.innerHTML = "";
-  label.classList.remove("invalid-feedback");
-  champ.classList.remove("is-invalid");
-}
-
-formregister.addEventListener("submit", function (event) {
-  if (pseudo.value.trim() === "") {
-    afficherErreur(pseudo, labelpseudo, "Remplissez le champ Pseudo.");
-    event.preventDefault();
-  } else if (pseudo.value.length < 5) {
-    afficherErreur(pseudo, labelpseudo, "Pseudo doit être composé d'au moins 5 caractères.");
-    event.preventDefault();
+  function validerEmail(email) {
+    return regex.test(email);
   }
-  if (email.value.trim() === "") {
-    afficherErreur(email, labelemail, "Remplissez le champ Email.");
-    event.preventDefault();
-  } else if (!validerEmail(email.value.trim())) {
-    afficherErreur(email, labelemail, "Entrez une adresse e-mail valide.");
-    event.preventDefault();
-  }
-  if (mdp.value.trim() === "") {
-    afficherErreur(mdp, labelmdp, "Remplissez le champ Mot de passe.");
-    event.preventDefault();
-  } else if (mdp.value.length < 8) {
-    afficherErreur(mdp, labelmdp, "Mot de passe doit être composé d'au moins 8 caractères.");
-    event.preventDefault();
-  }
-  if (mdp.value !== confirmationMdp.value || confirmationMdp.value.trim()==="") {
-    afficherErreur(confirmationMdp, labelconfirmationMdp, "Les mots de passe ne correspondent pas.");
-    event.preventDefault();
-  }
-});
 
-const champs = [pseudo, email, mdp, confirmationMdp];
-const text = ["Pseudo.", "Email.", "Mot de passe.", "Mot de passe, confirmer le."];
-const labels = [labelpseudo, labelemail, labelmdp, labelconfirmationMdp];
+  function afficherErreur(champ, label, message) {
+    label.innerHTML = message;
+    label.classList.add("invalid-feedback");
+    champ.classList.add("is-invalid");
+    label.style.display = "block";
+  }
 
+  function supprimerErreur(champ, label) {
+    label.innerHTML = "";
+    label.classList.remove("invalid-feedback");
+    champ.classList.remove("is-invalid");
+  }
 
-champs.forEach((champ, index) => {
-  champ.addEventListener("focus", () => {
-    supprimerErreur(champ, labels[index]);
-    labels[index].innerHTML = "Votre " + text[index];
+  formregister.addEventListener("submit", function (event) {
+    if (nip.value.trim() === "" || organisation.value.trim() === "") {
+      afficherErreur(organisation, labelnip, "");
+      afficherErreur(nip, labelnip, "Remplissez le champ numéro d'identification personnel.");
+      event.preventDefault();
+    } else if (nip.value.length < 4) {
+      afficherErreur(nip, labelnip, "Numéro d'identification doit être composé d'au moins 4 caractères.");
+      event.preventDefault();
+    }
+    if (nom.value.trim() === "") {
+      afficherErreur(nom, labelnomprenom, "Remplissez le champ Nom, le Prénom est facultatif.");
+      event.preventDefault();
+    }
+    if (email.value.trim() === "") {
+      afficherErreur(email, labelemail, "Remplissez le champ Email.");
+      event.preventDefault();
+    } else if (!validerEmail(email.value.trim())) {
+      afficherErreur(email, labelemail, "Entrez une adresse e-mail valide.");
+      event.preventDefault();
+    }
+    if (mdp.value.trim() === "") {
+      afficherErreur(mdp, labelmdp, "Remplissez le champ Mot de passe.");
+      event.preventDefault();
+    } else if (mdp.value.length < 8) {
+      afficherErreur(mdp, labelmdp, "Mot de passe doit être composé d'au moins 8 caractères.");
+      event.preventDefault();
+    }
+    if (mdp.value !== confirmationMdp.value || confirmationMdp.value.trim() === "") {
+      afficherErreur(confirmationMdp, labelconfirmationMdp, "Les mots de passe ne correspondent pas.");
+      event.preventDefault();
+    }
   });
-  champ.addEventListener("blur", () => {
-    supprimerErreur(champ, labels[index]);
-    labels[index].innerHTML = "Votre " + text[index];
+
+  const champs = [nip,organisation,nom,email, mdp, confirmationMdp];
+  const text = ["numéro d'identification.","numéro d'identification.","Nom et Prénom","Email.", "Mot de passe.", "Mot de passe, confirmez-le."];
+  const labels = [labelnip,labelnip,labelnomprenom,labelemail, labelmdp, labelconfirmationMdp];
+
+  champs.forEach((champ, index) => {
+    champ.addEventListener("focus", () => {
+      supprimerErreur(champ, labels[index]);
+      labels[index].innerHTML = "Votre " + text[index];
+    });
+    champ.addEventListener("blur", () => {
+      supprimerErreur(champ, labels[index]);
+      labels[index].innerHTML = "Votre " + text[index];
+    });
   });
-});
 </script>

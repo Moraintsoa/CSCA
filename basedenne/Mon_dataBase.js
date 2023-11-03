@@ -21,8 +21,19 @@ function selecteUtilisateur(nom_de_la_table,callback){
     })
 }
 function registerUtilisateur(datas){
-    csca_bd.query("INSERT INTO lesutilisateurs(id,pseudo, email, motdepasse) VALUES (?,?,?,?)",datas,(err)=>{
+    csca_bd.query("INSERT INTO lesutilisateurs(id, pseudo, email, motdepasse) VALUES (?,?,?,?)",datas,(err)=>{
         if(err)throw err
     })
 }
-module.exports={csca_bd,selecteUtilisateur,registerUtilisateur}
+function userCurrent(id, callback){
+    csca_bd.query(`SELECT * FROM lesutilisateurs WHERE id = ?`, [id], (err, datas) => {
+      if (err) {
+        console.log(err);
+        callback(err, null);
+      } else {
+        callback(null, datas);
+      }
+    });
+  };
+  
+module.exports={csca_bd,selecteUtilisateur,registerUtilisateur,userCurrent}

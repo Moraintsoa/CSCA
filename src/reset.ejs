@@ -1,33 +1,117 @@
+<style>
+  label{ font-size: 13px; }
+</style>
 <section class="vh-100">
-    <div class="container-fluid h-custom">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-md-9 col-lg-6 col-xl-5">
-          <img src="img/logo.png" class="img-fluid" alt="Sample image">
-        </div>
-        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-          <form method="post" id="formlogin">
-            <div class="d-flex align-items-center my-4">
-              <h3>Réinitialiser votre mot de passe</h3>
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="img/logo.png" class="img-fluid" alt="Exemple d'image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <form action="/reset" method="post" id="formreset">
+          <div class="d-flex align-items-center my-4">
+            <h3>Réinitialiser votre mot de passe</h3>
+          </div>
+
+          <!-- Ici Nip -->
+          <div class="form-outline mb-4 has-validation" id="divnipreset">
+            <div class="input-group">
+              <select class="form-select" id="organisationreset" name="organisationreset">
+                <option value="">Votre organisation</option>
+                <option value="PAC">PAC</option>
+                <option value="BIANCO">BIANCO</option>
+                <option value="SAMFIN">SAMFIN</option>
+              </select>
+              <input type="number" name="nipreset" id="nipreset" class="form-control form-control-lg shadow-sm" placeholder="ex: 0001">
             </div>
+            <label class="form-label mt-1" id="labelnipreset" for="nipreset">Votre numéro d'identification personnel</label>
+          </div>
+          <!-- Ici email -->
+          <div class="form-outline mb-4  has-validation">
+            <input type="email" id="emailreset" name="emailreset" class="form-control form-control-lg shadow-sm"
+              placeholder="ex : monemail@gmail.com" />
+            <label class="form-label mt-1" id="labelemailreset" for="emailreset">Email avec lequel vous avez créé votre compte</label>
+          </div>
+          <% if (errorMessage) { %>
+            <div class="alert alert-danger py-1">
+              <%= errorMessage %>
+            </div>
+            <% } %>
   
-            <!-- Eto email -->
-            <div class="form-outline mb-4  has-validation">
-              <input type="email" id="emailreset" name="emailreset" class="form-control form-control-lg shadow-sm"
-                placeholder="ex : monemail@gmai.com" />
-              <label class="form-label mt-1" id="labelemail" for="emailreset">Email avec le vous avez creer votre compte</label>
+            <% if (successMessage) { %>
+            <div class="alert alert-success py-1">
+              <%= successMessage %>
             </div>
-            <div class="text-center text-lg-start mt-4 pt-2">
-              <button type="submit" class="btn btn-bleu btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Envoyer
-              </button>
-              <a href="/login" class="">
-                <button type="button" class="btn btn-secondary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Annuler
-                </button>
-              </a>
-            </div>
-  
-          </form>
-        </div>
+            <% } %>
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-bleu btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Envoyer</button>
+            <a href="/login" class="">
+              <button type="button" class="btn btn-secondary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Retour</button>
+            </a>
+          </div>
+
+        </form>
       </div>
     </div>
-  </section>
-  <script>
+  </div>
+</section>
+<script>
+  const formreset = document.querySelector("#formreset");
+
+  const organisationreset = document.querySelector("#organisationreset");
+  const nipreset = document.querySelector("#nipreset");
+  const labelnipreset = document.querySelector("#labelnipreset");
+
+  const emailreset = document.querySelector("#emailreset");
+  const labelemailreset = document.querySelector("#labelemailreset");
+  
+const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+function validerEmail(email) {
+  return regex.test(email);
+}
+
+function afficherErreur(champ, label, message) {
+  label.innerHTML = message;
+  label.classList.add("invalid-feedback");
+  champ.classList.add("is-invalid");
+  label.style.display = "block";
+}
+function supprimerErreur(champ, label) {
+  label.innerHTML = "";
+  label.classList.remove("invalid-feedback");
+  champ.classList.remove("is-invalid");
+}
+
+formreset.addEventListener("submit", function (event){
+    if (nipreset.value.trim() === "" || organisationreset.value.trim() === "") {
+      afficherErreur(organisationreset, labelnipreset, "");
+      afficherErreur(nipreset, labelnipreset, "Remplissez le champ numéro d'identification personnel.");
+      event.preventDefault();
+    } else if (nipreset.value.length < 4) {
+      afficherErreur(nipreset, labelnipreset, "Numéro d'identification n'est pas valide.");
+      event.preventDefault();
+    }
+    if (emailreset.value.trim() === "") {
+      afficherErreur(emailreset, labelemailreset, "Remplissez le champ Email.");
+      event.preventDefault();
+    } else if (!validerEmail(emailreset.value.trim())) {
+      afficherErreur(emailreset, labelemailreset, "Entrez une adresse e-mail valide.");
+      event.preventDefault();
+    }
+  })
+  const champs = [nipreset, organisationreset, emailreset];
+  const text = ["numéro d'identification personnel.","numéro d'identification personnel.","email avec lequel vous avez créé votre compte."];
+  const labels = [labelnipreset,labelnipreset, labelemailreset];
+
+  champs.forEach((champ, index) => {
+    champ.addEventListener("focus", () => {
+      supprimerErreur(champ, labels[index]);
+      labels[index].innerHTML = "Votre " + text[index];
+    });
+    champ.addEventListener("blur", () => {
+      supprimerErreur(champ, labels[index]);
+      labels[index].innerHTML = "Votre " + text[index];
+    });
+  });
+  </script>

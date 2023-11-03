@@ -1,0 +1,58 @@
+<aside class="h-100 d-flex flex-column">
+    <header class="container-fluid m-0 shadow-sm d-flex justify-content-center align-items-center lessections">
+      <div class="flex-shrink-0">
+        <img src="img/icon.png" alt="CSCA" height="70px" width="70px"/>
+      </div>
+      <div class="flex-grow-1">
+        <h3 class="m-0 text-center text-menu">C.S.C.A</h3>
+      </div>
+    </header>
+    <div class="m-0 mt-1 pt-5 shadow-sm lessections flex-fill">
+      <div class="container">
+        <a class="row d-flex align-items-center a-menu mb-3" href="#">
+          <i class="bi bi-file-earmark-plus-fill size-2 col ms-2"></i>
+          <span class="text-menu col-8 p-0">DOSSIER PARQUET</span>
+        </a>
+        <a class="row d-flex align-items-center a-menu mb-3" href="#">
+          <i class="bi bi-person-plus-fill size-2 col ms-2"></i>
+          <span class="text-menu col-8 p-0">AJOUT INDIVIDUS</span>
+        </a>
+        <a class="row d-flex align-items-center a-menu mb-3" href="#">
+          <i class="bi bi-file-earmark-text size-2 col ms-2"></i>
+          <span class="text-menu col-8 p-0">JUGE D’INSTRUCTION</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <main class="h-100 d-flex flex-column w-100" id="maine">
+    <header class="m-0 ms-2 px-5 shadow-sm d-flex justify-content-end align-items-center lessections" style="height: 70px">
+      <div class="btn-group" id="profile">
+        <img src="img/profil.jpg" alt="profil" height="40px" width="40px" class="rounded-circle border border-4 dropdown-toggle" data-bs-auto-close="true" data-bs-toggle="dropdown"  aria-expanded="false" />
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="#">
+              <i class="bi bi-person-vcard">
+                Mon profile
+                <% if (id_user) { %>
+                  <div class="alert alert-danger py-1">
+                      <%= id_user %>
+                  </div>
+                <% } %>
+              </i>
+            </a>
+          </li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="/logout"> <i class="bi bi-box-arrow-right couleur-rouge-foncee"> Se deconnecter</i></a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="m-0 mt-1 ms-2 p-4 flex-fill shadow-sm lessections">
+      <div class="hstack gap-3">
+        <input class="form-control me-auto" type="text" placeholder="Add your item here..." aria-label="Add your item here...">
+        <button type="button" class="btn btn-secondary">Submit</button>
+        <div class="vr"></div>
+        <button type="button" class="btn btn-outline-danger">Reset</button>
+      </div>
+
+    </div>
+  </main>
