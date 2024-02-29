@@ -1,0 +1,208 @@
+<style>
+  div label.form-label {
+    font-size: 13px;
+  }
+  .btn-bleu {
+    background-color: #032f54;
+    color: #fff;
+  }
+  .btn-bleu:hover {
+    background-color: #04467c;
+    color: #fff;
+  }
+</style>
+
+<form class="row" id="ajoutdossier" action="/ajoutdossier" method="post">
+  <div class=" p-3 d-flex align-items-center mb-2 bgc-bleu rounded-top">
+    <small>
+      <strong>Ajout de Dossier</strong>
+    </small>
+  </div>
+  <div class="form-outline mb-1 has-validation col-md-6">
+    <div class="input-group">
+      <input
+        type="date"
+        class="form-control form-control-lg shadow-sm"
+        id="datearrivee"
+        name="datearrivee"
+        placeholder="Date de l'infraction"
+      />
+    </div>
+    <label for="datearrivee" class="form-label mt-1">Date d'arrivée</label>
+  </div>
+  <div class="form-outline mb-1 has-validation col-md-6">
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control form-control-lg shadow-sm"
+        id="numeropv"
+        name="numeropv"
+        placeholder="Numéro PV"/>
+    </div>
+    <label for="numeropv" class="form-label mt-1">Numéro PV</label>
+  </div>
+  <div class="form-outline mb-1 has-validation col-md-6">
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control form-control-lg shadow-sm"
+        id="numerorp"
+        name="numerorp"
+        placeholder="Numéro de RP en cours"/>
+    </div>
+    <label for="numerorp" class="form-label mt-1">Numéro de RP en cours</label>
+  </div>
+  <div class="form-outline mb-1 has-validation col-md-6">
+    <div class="input-group">
+
+
+      <select id="infraction" name="infraction" class="form-select form-select-lg shadow-sm">
+        <option value="">Sélectionner...</option>
+        <optgroup label="CORRUPTION et INFRACTIONS ASSIMILEES" id="CIA">
+          <option id='CNC' value="Concussion">Concussion</option>
+          <option id='EFI' value="Exonération et franchise illégale">Exonération et franchise illégale</option>
+          <option id='PAI' value="Prise d'avantages injustifiés">Prise d'avantages injustifiés</option>
+          <option id='PEP' value="Prise d'emploi prohibé">Prise d'emploi prohibé</option>
+          <option id='PAV' value="Favoritisme">Favoritisme</option>
+          <option id='CIQ' value="Commerce incompatible avec la qualité">Commerce incompatible avec la qualité</option>
+          <option id='CRP' value="Corruption">Corruption</option>
+          <option id='CRPa' value="Corruption active">Corruption active</option>
+          <option id='CRPp' value="Corruption passive">Corruption passive</option>
+          <option id='TRI' value="Trafic d'influence">Trafic d'influence</option>
+          <option id='ABF' value="Abus de fonction">Abus de fonction</option>
+          <option id='CFI' value="Conflit d'intérêts">Conflit d'intérêts</option>
+          <option id='KDO' value="Cadeaux">Cadeaux</option>
+          <option id='ERI' value="Enrichissement illicite">Enrichissement illicite</option>
+          <option id='DFP' value="Défaut de déclaration de patrimoine">Défaut de déclaration de patrimoine</option>
+          <option id='DAB' value="Dénonciation abusive">Dénonciation abusive</option>
+          <option id='ABS' value="Abus des biens sociaux">Abus des biens sociaux</option>
+          <option id='ABC' value="Abus de confiance">Abus de confiance</option>
+        </optgroup>
+        <optgroup label="BLANCHIMENT DE CAPITAUX" id="LBC">
+          <option id='LBC' value="Blanchiment des capitaux">Blanchiment des capitaux</option>
+        </optgroup>
+        <optgroup label="INFRACTION ECONOMIQUE ET FINANCIERE" id="IEF">
+          <option id='DDPri' value="Détournement de deniers privés">Détournement de deniers privés</option>
+          <option id='DDP' value="Détournement de deniers publics">Détournement de deniers publics</option>
+          <option id='CHG' value="Changes">Changes</option>
+          <option id='CNR' value="Concurrence">Concurrence</option>
+          <option id='COM' value="Sociétés commerciales">Sociétés commerciales</option>
+          <option id='FAU' value="Infraction de faux">Infraction de faux</option>
+          <option id='EXQ' value="Escroquerie">Escroquerie</option>
+        </optgroup>
+        <optgroup label="INFRACTIONS FISCALES" id="IFD">
+          <option id='CGI' value="Code Général des Impôts">Code Général des Impôts</option>
+        </optgroup>
+        <optgroup label="INFRACTIONS DOUANIERES" id="AIF">
+          <option id='DOU' value="Douanes">Douanes</option>
+        </optgroup>
+        <optgroup label="AUTRES INFRACTIONS">
+          <option id='TER' value="Terrorisme">Terrorisme</option>
+          <option id='RPR' value="Représailles">Représailles</option>
+          <option id='RID' value="Révélation d'identité d'un témoin anonyme">Révélation d'identité d'un témoin anonyme</option>
+          <option id='CTO' value="Criminalité transnationale organisée">Criminalité transnationale organisée</option>
+          <option id='CYB' value="Cybercriminalité">Cybercriminalité</option>
+          <option id='STUp' value="Stupéfiants">Stupéfiants</option>
+          <option id='PCAp' value="Procédures collectives d'apurement du Passif">Procédures collectives d'apurement du Passif</option>
+          <option id='PCH' value="Pêche">Pêche</option>
+          <option id='GAP' value="Gestion des aires Protégées">Gestion des aires Protégées</option>
+          <option id='CIF' value="Commerce International des espèces de faune et flore sauvages">Commerce International des espèces de faune et flore sauvages</option>
+          <option id='MIN' value="Minier">Minier</option>
+          <option id='POL' value="Politique de gestion et de contrôle des pollutions industielles">Politique de gestion et de contrôle des pollutions industielles</option>
+          <option id='ARM' value="Armement">Armement</option>
+          <option id='ICP' value="Infraction au code pétrolier">Infraction au code pétrolier</option>
+          <option id='CHM' value="Armes chimiques">Armes chimiques</option>
+          <option id='TEH' value="Vente d'organes et de trafic d'être humain">Vente d'organes et de trafic d'être humain</option>
+        </optgroup>
+      </select>
+
+    </div>
+    <label for="infraction" class="form-label mt-1">Infraction</label>
+  </div>
+  <div class="form-outline mb-1 has-validation col-md-6">
+    <div class="input-group">
+      <select
+        id="demandeur"
+        name="demandeur"
+        class="form-select form-select-lg shadow-sm"
+      >
+        <option value="">Sélectionner...</option>
+        <option value="JI">JI</option>
+        <option value="MP">MP</option>
+      </select>
+    </div>
+    <label for="demandeur" class="form-label mt-1">Demandeur</label>
+  </div>
+  <div class="form-outline mb-1 has-validation col-md-6">
+    <div class="input-group">
+      <select
+        id="objetdedemande"
+        name="objetdedemande"
+        class="form-select form-select-lg shadow-sm"
+      >
+        <option value="">Sélectionner...</option>
+        <option value="Confirmation">Confirmation</option>
+        <option value="Main levée">Main levée</option>
+        <option value="Saisie">Saisie</option>
+      </select>
+    </div>
+    <label for="objetdedemande" class="form-label mt-1">Objet de demande</label>
+  </div>
+  <div class="form-outline mb-1 has-validation col-md-6">
+    <div class="input-group">
+      <input
+        type="date"
+        class="form-control form-control-lg shadow-sm"
+        id="date1ere"
+        name="date1ere"
+        placeholder="Date de la première infraction"/>
+      <input
+        type="date"
+        class="form-control form-control-lg shadow-sm"
+        id="date2eme"
+        name="date2eme"
+        placeholder="Date de la deuxième infraction"
+      />
+    </div>
+    <label for="date1ere" class="form-label mt-1">Date d'infraction</label>
+  </div>
+  <div class="form-outline mb-1 has-validation col-md-6">
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control form-control-lg shadow-sm"
+        id="lieu"
+        name="lieu"
+        placeholder="Lieu de l'infraction"/>
+    </div>
+    <label for="lieu" class="form-label mt-1">Lieu de l'infraction</label>
+  </div>
+  <div class="text-center text-lg-start mt-4 pt-2">
+    <button
+      type="submit"
+      class="btn btn-bleu btn-lg"
+      style="padding-left: 2.5rem; padding-right: 2.5rem">
+      Enregistrer
+    </button>
+  </div>
+</form>
+<script>
+//   document.addEventListener("DOMContentLoaded", function () {
+//     const ajoutdossier = document.querySelector("#ajoutdossier");
+//     const listedossier = document.querySelector("#listedossier");
+//     const urlActuelle = window.location.href;
+//     const urlSearchParams = new URLSearchParams(urlActuelle.split("?")[1]);
+//     const ajoutParam = urlSearchParams.get("home");
+
+//     if (ajoutParam === "ajoutDossier") {
+//       ajoutdossier.classList.remove("d-none");
+//       listedossier.classList.add("d-none");
+//     } else if (ajoutParam === "listeDossier") {
+//       ajoutdossier.classList.add("d-none");
+//       listedossier.classList.remove("d-none");
+//     } else {
+//       ajoutdossier.classList.add("d-none");
+//       listedossier.classList.add("d-none");
+//     }
+//   });
+</script>

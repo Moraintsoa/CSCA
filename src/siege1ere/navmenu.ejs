@@ -1,0 +1,79 @@
+<style>
+  .nav-link{background-color: #032F54; color: #fff;margin: 1px;}
+  .nav-link:hover{background-color: #003d6e; color: #fff;}
+  i.bi-plus-circle{color: #fff}
+</style>
+<div class="container-fluid mb-5">
+<div class="row bg-bleu rounded-top">
+  <div class="col py-3 bg-bleu d-flex justify-content-start align-items-center rounded-top">
+    <h4 class="bg-bleu m-0" id="H4iokoay">Suivis au Siege</h4>
+  </div>
+  <div  class="col py-3 bg-bleu d-flex justify-content-end align-items-center rounded-top">
+    <h4 class="bg-bleu m-0">Dossier N°  <%= id_dossier %></h4>
+  </div>
+</div>
+<nav class="row" id="grandnav">
+  <div class="nav nav-tabs p-0" id="nav-tab" role="tablist">
+    <button class="col rounded-0 nav-link Confirmationdesaisie" id="nav-confirmationdesaisie-tab" data-bs-toggle="tab" data-bs-target="#nav-confirmationdesaisie" type="button" role="tab" aria-controls="nav-confirmationdesaisie" aria-selected="true"><i class="bi bi-plus-circle"></i> Confirmation de saisie</button>
+    <button class="col rounded-0 nav-link Mainlevée" id="nav-Mainlevée-tab" data-bs-toggle="tab" data-bs-target="#nav-Mainlevée" type="button" role="tab" aria-controls="nav-Mainlevée" aria-selected="false"><i class="bi bi-plus-circle"></i> Mainlevée</button>
+    <button class="col rounded-0 nav-link Oppositionauxopérationssuspects" id="nav-oos-tab" data-bs-toggle="tab" data-bs-target="#nav-oos" type="button" role="tab" aria-controls="nav-oos" aria-selected="false"><i class="bi bi-plus-circle"></i> Opposition aux opérations suspects</button>
+    <button class="col rounded-0 nav-link ConfiscatonCSCA" id="nav-confiscatoncsca-tab" data-bs-toggle="tab" data-bs-target="#nav-confiscatoncsca" type="button" role="tab" aria-controls="nav-confiscatoncsca" aria-selected="false"><i class="bi bi-plus-circle"></i> Confiscaton CSCA</button>
+    <button class="col rounded-0 nav-link OpositionauxConfiscatonCSCA" id="nav-opositionauxconfiscatoncsca-tab" data-bs-toggle="tab" data-bs-target="#nav-opositionauxconfiscatoncsca" type="button" role="tab" aria-controls="nav-opositionauxconfiscatoncsca" aria-selected="false"><i class="bi bi-plus-circle"></i> Oposition aux Confiscaton CSCA</button>
+  </div>
+</nav>
+
+<nav class="btn-group petitnav" id="nav-tab" role="tablist">
+  <i class="bi bi-list dropdown-toggle size-2" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="true"></i>
+  <ul class="dropdown-menu p-3 listmenu">
+    <li><button class="nav-link dropdown-item Confirmationdesaisie" id="nav-confirmationdesaisie-tab" data-bs-toggle="tab" data-bs-target="#nav-confirmationdesaisie" type="button" role="tab" aria-controls="nav-confirmationdesaisie" aria-selected="true"><i class="bi bi-plus-circle"></i> Confirmation de saisie</button></li>
+    <li><button class="nav-link dropdown-item Mainlevée" id="nav-Mainlevée-tab" data-bs-toggle="tab" data-bs-target="#nav-Mainlevée" type="button" role="tab" aria-controls="nav-Mainlevée" aria-selected="false"><i class="bi bi-plus-circle"></i> Mainlevée</button></li>
+    <li><button class="nav-link dropdown-item Oppositionauxopérationssuspects" id="nav-oos-tab" data-bs-toggle="tab" data-bs-target="#nav-oos" type="button" role="tab" aria-controls="nav-oos" aria-selected="false"><i class="bi bi-plus-circle"></i> Opposition aux opérations suspects</button></li>
+    <li><button class="nav-link dropdown-item ConfiscatonCSCA" id="nav-confiscatoncsca-tab" data-bs-toggle="tab" data-bs-target="#nav-confiscatoncsca" type="button" role="tab" aria-controls="nav-confiscatoncsca" aria-selected="false"><i class="bi bi-plus-circle"></i> Confiscaton CSCA</button></li>
+    <li><button class="nav-link dropdown-item OpositionauxConfiscatonCSCA" id="nav-opositionauxconfiscatoncsca-tab" data-bs-toggle="tab" data-bs-target="#nav-opositionauxconfiscatoncsca" type="button" role="tab" aria-controls="nav-opositionauxconfiscatoncsca" aria-selected="false"><i class="bi bi-plus-circle"></i> Oposition aux Confiscaton CSCA</button></li>
+  </ul>
+</nav>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const buttons = document.querySelectorAll('.nav-link');
+const bouton1s = document.querySelectorAll('#grandnav > div > button');
+const bouton2s = document.querySelectorAll('.dropdown-menu > li > button');
+const urlActuelle = window.location.href;
+const urlSearchParams = new URLSearchParams(urlActuelle.split('?')[1]);
+const ajoutParam = urlSearchParams.get('ajout');
+  
+bouton1s.forEach(function(bouton1) {
+  if (bouton1.classList.contains(ajoutParam)) {
+    bouton1.classList.add('active');
+  } else {
+    bouton1.classList.remove('active');
+  }
+});
+
+bouton2s.forEach(function(bouton2) {
+  if (bouton2.classList.contains(ajoutParam)) {
+    bouton2.classList.add('active');
+  } else {
+    bouton2.classList.remove('active');
+  }
+});
+
+buttons.forEach(function(button) {
+  button.addEventListener('click', function() {
+    const valeur = button.textContent.replace(/\s/g, ''); // Récupère le texte du bouton pour la valeur
+    const urlActuelle = window.location.href;
+    // const urlSansParametre = urlActuelle.split('?')[0]; // Supprime tous les paramètres existants
+    // const urlSansParametre1 = urlActuelle.split('?')[1]; // Supprime tous les paramètres existants
+    // const urlAvecParametre = `${urlSansParametre}?${urlSansParametre1}?ajout=${valeur}`;
+
+    const urlentite = urlActuelle.split("?")[0]; // Supprime tous les paramètres existants
+    const urldetajout = urlActuelle.split("?")[1]; // Supprime tous les paramètres existants
+    const urld = urldetajout.split("&")[0]; // Supprime tous les paramètres existants
+    const urlajout = urldetajout.split("&")[1]; // Supprime tous les paramètres existants
+    const urlAvecParametre = `${urlentite}?${urld}&ajout=${valeur}`;
+
+    window.location.href = urlAvecParametre;
+  });
+});
+});
+</script>

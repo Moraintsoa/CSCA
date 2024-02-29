@@ -1,0 +1,65 @@
+<style>
+  div label.form-label {
+    font-size: 13px;
+  }
+  .btn-bleu {
+    background-color: #032F54;
+    color: #fff;
+  }
+  .bg-bleu {
+    background-color: #032F54;
+    color: #fff;
+  }
+  .btn-bleu:hover {
+    background-color: #04467c;
+    color: #fff;
+  }
+</style>
+<%- include("../navmenu.ejs") %>
+<form class="row" id="ajoutdossier" action="/confiscatoncsca" method="post">
+  <% if (lesdonnees) { for (const donnee of lesdonnees){%>
+  <input type="text" id="id_csca" name="id_csca" value="<%= donnee.referencecsca %>" hidden>
+  <div class="form-outline mb-1 has-validation col-md-6">
+    <div class="input-group">
+      <input type="date" class="form-control form-control-lg shadow-sm" id="datearrivee" name="datearrivee" placeholder="Date d’arrivée à la CSCA" value="<%= donnee.datearrivee %>" />
+    </div>
+    <label for="datearrivee" class="form-label mt-1">Date d’arrivée à la CSCA</label>
+  </div>
+
+  <div class="form-outline mb-1 has-validation col-md-6">
+    <div class="input-group">
+      <input type="date" class="form-control form-control-lg shadow-sm" id="dateJugement" name="dateJugement" placeholder="Date de Jugement" value="<%= donnee.datejugement %>" />
+    </div>
+    <label for="dateJugement" class="form-label mt-1">Date de Jugement</label>
+  </div>
+
+  <div class="form-outline mb-1 has-validation col-md-6">
+    <div class="input-group">
+      <input value="<%= donnee.nature %>" type="text" class="form-control form-control-lg shadow-sm" id="natureJugement" name="natureJugement" placeholder="Nature du Jugement" />
+    </div>
+    <label for="natureJugement" class="form-label mt-1">Nature du Jugement</label>
+  </div>
+
+  <div class="form-outline mb-1 has-validation col-md-6">
+    <div class="input-group">
+      <input value="<%= donnee.demande %>" type="text" class="form-control form-control-lg shadow-sm" id="demandePar" name="demandePar" placeholder="Demandé par" />
+    </div>
+    <label for="demandePar" class="form-label mt-1">Demandé par</label>
+  </div>
+
+  <div class="form-outline mb-1 has-validation col-md-6">
+    <div class="input-group">
+      <select id="decision" name="decision" class="form-select form-select-lg shadow-sm">
+        <option class="select_default_value" value="<%= donnee.decision %>"><%= donnee.decision %></option>
+        <option value="Accordee">Accordée</option>
+        <option value="Refusee">Refusée</option>
+      </select>
+    </div>
+    <label for="decision" class="form-label mt-1">Décisions</label>
+  </div>
+
+  <div class="text-center text-lg-start mt-4 pt-2">
+    <button type="submit" class="btn btn-bleu btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Enregistrer</button>
+  </div>
+  <% }} %>
+</form>

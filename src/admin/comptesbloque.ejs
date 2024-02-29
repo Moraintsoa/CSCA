@@ -1,0 +1,152 @@
+<main class="mt-4">
+    <div class="container-fluid px-md-4">
+        <!-- content row -->    
+        <div class="row mb-4 g-4">
+            <div class="col">
+                <div class="card border-5 border-danger">
+                    <div class="card-body bgc-bleu">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="bg-danger py-3 px-4 rounded-3">
+                                <i class="bi bi-ban size-2"></i>
+                            </div>
+  
+                            <div class="text-end">
+                                <h1 class="m-0">
+                                    <% if (lesutilisateurs) {
+                                        let i=0;
+                                        for (const utilisateur of lesutilisateurs){
+                                            if (utilisateur.etat_du_compte==="bloquee"){
+                                                i++
+                                            }}%>
+                                        <%- i %>
+                                    </h1>
+                                    <div class="text-capitalize">
+                                        
+                                        <% if (i>1) { %>
+                                            Comptes bloqué
+                                        <%} else{%>
+                                            Compte bloqué
+                                        <%}%>
+                                    </div>
+                                    <%}%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ content row -->   
+  
+        <!-- content row -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-table">
+                    <div class="card-header bgc-bleu">
+                        <div class="d-flex justify-content-between align-items-center w-100">
+                            <small>
+                                <strong>Liste des personne bloquées</strong>
+                            </small>
+  
+                            <a href="#!" class="btn btn-sm btn-mode"></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table text-center table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            #
+                                        </th>
+                                        <th>
+                                            Nom
+                                        </th>
+                                        <th>
+                                            Prénom
+                                        </th>
+                                        <th>
+                                            Email
+                                        </th>
+                                        <th>
+                                            Debloquer
+                                        </th>
+                                        <th>
+                                            Supprimer
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <% if (lesutilisateurs) {%> <% for (const utilisateur of lesutilisateurs){ if (utilisateur.etat_du_compte==="bloquee") {%>
+                                    <tr>
+                                      <td><img src="img/profil/<%= utilisateur.photo %>" alt="profil" height="30px" width="30px" class="rounded-circle border border-3 "/></td>
+                                      <td><%- utilisateur.nom %></td>
+                                      <td><%- utilisateur.prenom %></td>
+                                      <td><%- utilisateur.email %></td>
+                                      <td><button type="button" class="btn btn-outline-secondary" onclick="debloquerUtilisateur('<%- utilisateur.id %>')">Debloquer</button></td>
+                                      <td>
+                                        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#suppressiondecompte<%- utilisateur.id %>" data-bs-whatever="supprimerunutilisateur">Supprimer</button>
+                                        <div class="modal fade" id="suppressiondecompte<%- utilisateur.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog">
+                                            <div class="modal-content">
+                                              <div class="modal-header bgc-bleu">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Suppression de compte</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                              </div>
+                                              <div class="modal-body">
+                                                <form>
+                                                  <div class="mb-3">
+                                                    <h3>Voulez-vous vraiment supprimer le compte de <strong><%- utilisateur.nom %> <%- utilisateur.prenom %></strong></h3>
+                                                  </div>
+                                                </form>
+                                              </div>
+                                              <div class="modal-footer">
+                                                  <button type="button" class="btn btn-danger" onclick="supprimerUtilisateur('<%= utilisateur.id %>')">Supprimer</button>
+                                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                    <%}}}%>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ content row -->
+    </div>
+  </main>
+  <script>
+    function debloquerUtilisateur(id){
+        fetch(`/debloquer/${id}`, {
+    method: 'POST',
+  }).then((response) => {
+    // Mettre à jour l'interface utilisateur en fonction de la réponse du serveur
+    if (response.ok) {
+      // Afficher un message de confirmation
+      // Recharger la page
+      window.location.reload();
+    } else {
+      // Afficher un message d'erreur
+    }
+  });
+    }
+    function supprimerUtilisateur(id) {
+  // Envoyer une requête AJAX au serveur pour supprimer l'utilisateur
+  fetch(`/supprimerUtilisateur/${id}`, {
+    method: 'POST',
+  }).then((response) => {
+    // Mettre à jour l'interface utilisateur en fonction de la réponse du serveur
+    if (response.ok) {
+      // Afficher un message de confirmation
+      // Recharger la page
+      window.location.reload();
+    } else {
+      // Afficher un message d'erreur
+    }
+  });
+}
+  </script>

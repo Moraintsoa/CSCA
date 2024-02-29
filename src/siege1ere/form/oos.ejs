@@ -1,0 +1,52 @@
+<style>
+    div label.form-label {
+      font-size: 13px;
+    }
+    .btn-bleu {
+      background-color: #032F54;
+      color: #fff;
+    }
+    .bg-bleu {
+      background-color: #032F54;
+      color: #fff;
+    }
+    .btn-bleu:hover {
+      background-color: #04467c;
+      color: #fff;
+    }
+  </style>
+<%- include("../navmenu.ejs") %>
+  <form class="row" id="ajoutdossier" action="/oos" method="post">
+    <% if (lesdonnees) { for (const donnee of lesdonnees){%>
+      <input type="text" id="id_csca" name="id_csca" value="<%= donnee.referencecsca %>" hidden>
+    <div class="form-outline mb-1 has-validation col-md-6">
+      <div class="input-group">
+        <input type="date" class="form-control form-control-lg shadow-sm" id="dateinfraction" name="datearrivee" placeholder="Date d’arrivée à la CSCA" value="<%= donnee.datearrivee %>" />
+      </div>
+      <label for="dateinfraction" class="form-label mt-1">Date d’arrivée à la CSCA</label>
+    </div>
+  
+    <div class="form-outline mb-1 has-validation col-md-6">
+      <div class="input-group">
+        <input value="<%= donnee.demande %>" type="text" class="form-control form-control-lg shadow-sm" id="demande" name="demande" placeholder="Demande" />
+      </div>
+      <label for="demande" class="form-label mt-1">Demande</label>
+    </div>
+  
+    <div class="form-outline mb-1 has-validation col-md-6">
+      <div class="input-group">
+        <select id="decision" name="decision" class="form-select form-select-lg shadow-sm">
+          <option class="select_default_value" value="<%= donnee.decision %>"><%= donnee.decision %></option>
+          <option value="prorogationAccordes">Prorogation Accordées</option>
+          <option value="prorogationRefusees">Prorogation Refusées</option>
+        </select>
+      </div>
+      <label for="decision" class="form-label mt-1">Décisions Prorogation</label>
+    </div>
+  
+    <div class="text-center text-lg-start mt-4 pt-2">
+      <button type="submit" class="btn btn-bleu btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Enregistrer</button>
+    </div>
+    <% }} %>
+  </form>
+  

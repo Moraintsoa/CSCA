@@ -1,0 +1,449 @@
+[2024-02-12 11:29:39] ---------- Microsoft Windows NT 10.0.19045.0 (D:\APP\CSCA\IronSoftware.log) ----------
+[2024-02-12 11:29:39] ---------- Microsoft Windows NT 10.0.19045.0 (D:\APP\CSCA\IronSoftware.log) ----------
+[2024-02-12 11:29:39] Using deployment directory 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:29:39] Creating deployment candidates using root path 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\' (download: False)
+[2024-02-12 11:29:39] Creating folder deployments for win-x64
+[2024-02-12 11:29:39] Creating deployment candidates using root path 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\' (download: False)
+[2024-02-12 11:29:39] Creating embedded deployments for win-x64
+[2024-02-12 11:29:39] Creating folder deployments for win-x64
+[2024-02-12 11:29:39] Successfully located 'IronPdfInterop' at 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:29:39] Creating embedded deployments for win-x64
+[2024-02-12 11:29:39] Warning! Missing deployment configuration file for deployment 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:29:39] Successfully located 'IronPdfInterop' at 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:29:39] Warning! Missing deployment configuration file for deployment 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:29:39] IronSoftware.Exceptions.IronSoftwareDeploymentConfigurationMissingException: Error while locating deployment configuration file 'Pdfium*.deployment.json' within 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+   at IronSoftware.Deployment.SmartDeploymentBase.GetDeploymentConfiguration(IDeployment deployment)
+   at IronSoftware.Deployment.SmartDeploymentBase.ExecuteDeploymentCommands(IDeployment deployment)
+   at IronSoftware.Deployment.SmartDeploymentBase.Deploy(Boolean download)
+[2024-02-12 11:29:39] Attempting to load Windows library 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronPdfInterop.dll'
+[2024-02-12 11:29:39] Attempting to load Windows library 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronPdfInterop.dll'
+[2024-02-12 11:29:39] Successfully loaded native library from 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronPdfInterop.dll'
+[2024-02-12 11:29:39] Successfully loaded native library from 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronPdfInterop.dll'
+[2024-02-12 11:29:39] Successfully loaded 'IronPdfInterop' version '2024.1.0.143' from 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:29:39] Successfully deployed 'Pdfium' using 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:29:39] Creating new job collection resource
+[2024-02-12 11:29:39] Creating new document collection resource
+[2024-02-12 11:29:40] Successfully initialized local pdf client
+[2024-02-12 11:29:40] Initializing local Chrome client...
+[2024-02-12 11:29:40] Using deployment directory 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:29:40] Creating deployment candidates using root path 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\' (download: False)
+[2024-02-12 11:29:40] Creating folder deployments for win-x64
+[2024-02-12 11:29:40] Creating embedded deployments for win-x64
+[2024-02-12 11:29:40] Successfully located 'IronInterop' at 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:29:41] Determining deployment commands for platform 'Windows' v10.0.19045.0
+[2024-02-12 11:29:41] Determining deployment commands for platform 'Windows' v10.0.19045.0
+[2024-02-12 11:29:41] Using deployment instructions for 'default' v
+[2024-02-12 11:29:41] Using deployment instructions for 'default' v
+[2024-02-12 11:29:41] Attempting to load Windows library 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronInterop.dll'
+[2024-02-12 11:29:41] Attempting to load Windows library 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronInterop.dll'
+[2024-02-12 11:29:42] Attempting to load Windows library 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronInterop.dll'
+[2024-02-12 11:29:42] Successfully loaded native library from 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronInterop.dll'
+[2024-02-12 11:29:42] Successfully loaded 'IronInterop' version '2024.1.0.143' from 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:29:42] Successfully deployed 'Chrome' using 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:29:42] Initializing Chrome renderer for OS Name: Windows, Identifier: win, Version: 10.0.19045.0, VersionName: , Domain: IronPdfEngineConsole, Thread: , Path: D:\APP\CSCA
+[2024-02-12 11:29:44] 11:29:44 (5620): ~ Chrome renderer v2024.1.0.143~
+[2024-02-12 11:29:44] 11:29:44 (9156): ~ Chrome renderer v2024.1.0.143~
+[2024-02-12 11:29:44] 11:29:44 (5620): register JobManager as publisher for event_readyToInitializeNetworkEventsDevToolsHandler
+[2024-02-12 11:29:44] 11:29:44 (9156): [EventRegistry] Register event_readyToInitializeNetworkEventsDevToolsHandler for a publisher
+[2024-02-12 11:29:44] 11:29:44 (5620): [EventRegistry] Register event_readyToInitializeNetworkEventsDevToolsHandler for a publisher
+[2024-02-12 11:29:44] 11:29:44 (5620): IsSingleProcess: 0
+[2024-02-12 11:29:44] 11:29:44 (9156): Creating Cef proxy controller
+[2024-02-12 11:29:44] 11:29:44 (5620): Creating Cef proxy controller
+[2024-02-12 11:29:44] 11:29:44 (9156): Creating Cef interface
+[2024-02-12 11:29:44] 11:29:44 (5620): Creating Cef interface
+[2024-02-12 11:29:44] 11:29:44 (9156): JobManager subscribes a new sub, eventStr=event_readyToInitializeNetworkEventsDevToolsHandler
+[2024-02-12 11:29:44] 11:29:44 (9156): JobManager subscribes a new sub, eventStr=event_readyToInitializeNetworkEventsDevToolsHandler
+[2024-02-12 11:29:44] 11:29:44 (5620): JobManager subscribes a new sub, eventStr=event_readyToInitializeNetworkEventsDevToolsHandler
+[2024-02-12 11:29:44] 11:29:44 (9156): Initializing Cef proxy controller
+[2024-02-12 11:29:44] 11:29:44 (5620): Destroying Cef proxy event handler
+[2024-02-12 11:29:44] 11:29:44 (5620): Initializing Cef proxy controller
+[2024-02-12 11:29:44] 11:29:44 (9156): Using subprocess path 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronCefSubprocess.exe'
+[2024-02-12 11:29:44] 11:29:44 (9156): Using framework path 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:29:44] 11:29:44 (9156): Using locales path 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\\locales'
+[2024-02-12 11:29:44] 11:29:44 (9156): Using resources path 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:29:44] 11:29:44 (5620): Using subprocess path 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronCefSubprocess.exe'
+[2024-02-12 11:29:44] 11:29:44 (5620): Using framework path 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:29:44] 11:29:44 (5620): Using locales path 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\\locales'
+[2024-02-12 11:29:44] 11:29:44 (5620): Using resources path 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:29:44] 11:29:44 (5620): Launching child process '"D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronPdfEngineConsole.exe" --browser-subprocess-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronCefSubprocess.exe" --no-sandbox --lang=en-US --log-file=cef.log --log-severity=disable --resources-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20" --locales-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\\locales" --disable-features=CalculateNativeWinOcclusion,WinUseBrowserSpellChecker,BackForwardCache host=127.0.0.1 port=33350 docker_build=false keep_alive=true linux_and_docker_auto_config=false skip_initialization=false single_process=false chrome_browser_limit=30 chrome_gpu_mode=0 linux_and_docker_auto_config=true programming_language=nodejs enable_debug=false'
+[2024-02-12 11:29:44] 11:29:44 (9156): gpu_mode: '0'
+[2024-02-12 11:29:44] 11:29:44 (5620): gpu_mode: '0'
+[2024-02-12 11:29:53] 11:29:53 (3200): Launching child process '"D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronCefSubprocess.exe" --type=gpu-process --no-sandbox --headless --locales-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\\locales" --log-severity=disable --resources-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20" --lang=en-US --user-data-dir="C:\Users\renel\AppData\Local\Temp" /prefetch:2'
+[2024-02-12 11:29:53] 11:29:53 (2096): gpu_mode: '0'
+[2024-02-12 11:29:56] 11:29:56 (5620): Cef initialization succeeded
+[2024-02-12 11:29:56] Successfully initialized local Chrome client
+[2024-02-12 11:29:56] 11:29:56 (3200): Cef context initialized
+[2024-02-12 11:29:56] 11:29:56 (2096): Registering custom scheme for rendering raw html
+[2024-02-12 11:29:56] 11:29:56 (3200): Successfully registered custom scheme
+[2024-02-12 11:29:56] 11:29:56 (2096): Cef engine initialization complete
+[2024-02-12 11:29:57] 11:29:57 (3200): Launching child process '"D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronCefSubprocess.exe" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --ignore-urlfetcher-cert-requests --no-sandbox --ignore-certificate-errors --mute-audio --ignore-certificate-errors --locales-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\\locales" --log-severity=disable --resources-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20" --lang=en-US --user-data-dir="C:\Users\renel\AppData\Local\Temp" /prefetch:8'
+[2024-02-12 11:29:57] 11:29:57 (2096): gpu_mode: '0'
+[2024-02-12 11:29:57] 11:29:57 (3200): gpu_mode: '0'
+[2024-02-12 11:30:11] 11:30:11 (772): Generating pdf from html
+[2024-02-12 11:30:11] 11:30:11 (8680): Generating pdf from html
+[2024-02-12 11:30:11] 11:30:11 (772): BROWSER SETTINGS:
+View: 1024x1280
+Enable Javascript: 1
+Username: 
+Cookies len: 0
+
+[2024-02-12 11:30:11] 11:30:11 (772): RENDER SETTINGS:
+Backgrounds: 1, Emulate Screen: 1, Forms: 1, Landscape : 0, GrayScale : 0
+WaitForType: RenderDelay, Timeout: 10000, NetworkIdle duration: 500, Num allowed inflight: 0, Html Query Str: 
+Scale: 1
+Page Size Type: A4
+Custom Page Size: 210x297
+Actual Page Size: 210x297
+Page Margin Type: 2
+Margin Top: 0.39, Right: 0.38, Bottom: 0.38, Left: 0.39
+Header Html: 
+Footer Html: 
+Javascript: 
+Autosize Screen: 0, PPI: 96
+Title: 
+First Page Number: 1
+Save Path: 
+Render Delay: 20
+Max Header Height: 200, Max Footer Height : 200
+
+[2024-02-12 11:30:11] 11:30:11 (772): Created new job group 0 for new document
+[2024-02-12 11:30:11] 11:30:11 (772): Created job group 0
+[2024-02-12 11:30:11] 11:30:11 (772): Queuing job 0
+[2024-02-12 11:30:11] 11:30:11 (8680): BROWSER SETTINGS:
+View: 1024x1280
+Enable Javascript: 1
+Username: 
+Cookies len: 0
+
+[2024-02-12 11:30:11] 11:30:11 (8680): RENDER SETTINGS:
+Backgrounds: 1, Emulate Screen: 1, Forms: 1, Landscape : 0, GrayScale : 0
+WaitForType: RenderDelay, Timeout: 10000, NetworkIdle duration: 500, Num allowed inflight: 0, Html Query Str: 
+Scale: 1
+Page Size Type: A4
+Custom Page Size: 210x297
+Actual Page Size: 210x297
+Page Margin Type: 2
+Margin Top: 0.39, Right: 0.38, Bottom: 0.38, Left: 0.39
+Header Html: 
+Footer Html: 
+Javascript: 
+Autosize Screen: 0, PPI: 96
+Title: 
+First Page Number: 1
+Save Path: 
+Render Delay: 20
+Max Header Height: 200, Max Footer Height : 200
+
+[2024-02-12 11:30:11] 11:30:11 (8680): Created new job group 1 for new document
+[2024-02-12 11:30:11] 11:30:11 (772): Checking for browser availability (0/30)
+[2024-02-12 11:30:11] 11:30:11 (8680): Created job group 1
+[2024-02-12 11:30:11] 11:30:11 (8680): Queuing job 1
+[2024-02-12 11:30:11] 11:30:11 (772): Creating new browser after waiting 0 seconds
+[2024-02-12 11:30:11] 11:30:11 (8680): Checking for browser availability (1/30)
+[2024-02-12 11:30:11] 11:30:11 (8680): Creating new browser after waiting 0 seconds
+[2024-02-12 11:30:12] 11:30:12 (3200): Created browser id 1, 1 exist
+[2024-02-12 11:30:12] 11:30:12 (3200): Browser 1 created and ready for assignment
+[2024-02-12 11:30:12] 11:30:12 (3200): Assigning job 0 to browser 1
+[2024-02-12 11:30:12] 11:30:12 (3200): Processing job for html content on browser 1
+[2024-02-12 11:30:13] 11:30:13 (3200): Launching child process '"D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronCefSubprocess.exe" --type=renderer --locales-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\\locales" --log-severity=disable --resources-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20" --user-data-dir="C:\Users\renel\AppData\Local\Temp"'
+[2024-02-12 11:30:13] 11:30:13 (3200): gpu_mode: '0'
+[2024-02-12 11:30:13] 11:30:13 (3200): Launching child process '"D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronCefSubprocess.exe" --type=renderer --locales-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\\locales" --log-severity=disable --resources-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20" --user-data-dir="C:\Users\renel\AppData\Local\Temp"'
+[2024-02-12 11:30:13] 11:30:13 (3200): gpu_mode: '0'
+[2024-02-12 11:30:14] 11:30:14 (3200): Browser 1 loading state changed to 1 for url ''
+[2024-02-12 11:30:15] 11:30:15 (9728): Received resource request from null for [internal] on browser 1 (nav: 1, dl: 0)
+[2024-02-12 11:30:15] 11:30:15 (9728): Resolved resource request using default handler
+[2024-02-12 11:30:15] 11:30:15 (9728): Received resource request from null for [internal] on browser 1 (nav: 1, dl: 0)
+[2024-02-12 11:30:15] 11:30:15 (9728): Resolved resource request using default handler
+[2024-02-12 11:30:15] 11:30:15 (3200): Created browser id 2, 2 exist
+[2024-02-12 11:30:15] 11:30:15 (3200): Browser 2 created and ready for assignment
+[2024-02-12 11:30:15] 11:30:15 (3200): Assigning job 1 to browser 2
+[2024-02-12 11:30:15] 11:30:15 (3200): Processing job for html content on browser 2
+[2024-02-12 11:30:15] 11:30:15 (3200): Launching child process '"D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronCefSubprocess.exe" --type=renderer --locales-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\\locales" --log-severity=disable --resources-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20" --user-data-dir="C:\Users\renel\AppData\Local\Temp"'
+[2024-02-12 11:30:15] 11:30:15 (3200): gpu_mode: '0'
+[2024-02-12 11:30:15] 11:30:15 (3200): Launching child process '"D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronCefSubprocess.exe" --type=renderer --locales-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\\locales" --log-severity=disable --resources-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20" --user-data-dir="C:\Users\renel\AppData\Local\Temp"'
+[2024-02-12 11:30:15] 11:30:15 (3200): gpu_mode: '0'
+[2024-02-12 11:30:15] 11:30:15 (3200): Browser 2 loading state changed to 1 for url ''
+[2024-02-12 11:30:16] 11:30:16 (9728): Creating resource handler for scheme http using url [internal] on browser 1
+[2024-02-12 11:30:16] 11:30:16 (9728): Received resource request from null for [internal] on browser 2 (nav: 1, dl: 0)
+[2024-02-12 11:30:16] 11:30:16 (9728): Resolved resource request using default handler
+[2024-02-12 11:30:16] 11:30:16 (9728): Received resource request from null for [internal] on browser 2 (nav: 1, dl: 0)
+[2024-02-12 11:30:16] 11:30:16 (9728): Resolved resource request using default handler
+[2024-02-12 11:30:16] 11:30:16 (3200): Launching child process '"D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronCefSubprocess.exe" --type=renderer --locales-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\\locales" --log-severity=disable --resources-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20" --user-data-dir="C:\Users\renel\AppData\Local\Temp"'
+[2024-02-12 11:30:16] 11:30:16 (3200): gpu_mode: '0'
+[2024-02-12 11:30:16] 11:30:16 (9728): Creating resource handler for scheme http using url [internal] on browser 2
+[2024-02-12 11:30:17] 11:30:17 (3200): Launching child process '"D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronCefSubprocess.exe" --type=renderer --locales-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\\locales" --log-severity=disable --resources-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20" --user-data-dir="C:\Users\renel\AppData\Local\Temp"'
+[2024-02-12 11:30:17] 11:30:17 (3200): gpu_mode: '0'
+[2024-02-12 11:30:22] 11:30:22 (3200): Browser 1 frame 17179869185 started loading [internal]
+[2024-02-12 11:30:22] 11:30:22 (3200): Browser 1 status: 
+[2024-02-12 11:30:22] 11:30:22 (3200): Browser 2 frame 25769803777 started loading [internal]
+[2024-02-12 11:30:22] 11:30:22 (3200): Browser 2 status: 
+[2024-02-12 11:30:23] 11:30:23 (3200): Received IPC message 'OnBrowserCreated' from Renderer process: 'OnBrowserCreated'
+[2024-02-12 11:30:23] 11:30:23 (3200): Received message from render process with 0 bytes
+[2024-02-12 11:30:23] 11:30:23 (3200): [IPAER] (Browser process) message received from upstream CEF: browserId=1, message name=OnBrowserCreated
+[2024-02-12 11:30:23] 11:30:23 (3200): Received IPC message 'OnBrowserCreated' from Renderer process: 'OnBrowserCreated'
+[2024-02-12 11:30:23] 11:30:23 (3200): Received message from render process with 0 bytes
+[2024-02-12 11:30:23] 11:30:23 (3200): [IPAER] (Browser process) message received from upstream CEF: browserId=2, message name=OnBrowserCreated
+[2024-02-12 11:30:23] 11:30:23 (3200): Browser 2 frame 25769803777 ended loading [internal]
+[2024-02-12 11:30:23] 11:30:23 (3200): Browser 2 loading state changed to 0 for url '[internal]'
+[2024-02-12 11:30:23] 11:30:23 (3200): Frame loaded for job 1 on browser 2
+[2024-02-12 11:30:23] 11:30:23 (3200): Found job 1 in group 1 (of 2 groups)
+[2024-02-12 11:30:23] 11:30:23 (3200): Executing dev tools method 'Emulation.setEmulatedMedia' for browser 2
+[2024-02-12 11:30:23] 11:30:23 (3200): Executing dev tools method 'Page.getLayoutMetrics' for browser 2
+[2024-02-12 11:30:23] 11:30:23 (3200): Browser 1 frame 17179869185 ended loading [internal]
+[2024-02-12 11:30:23] 11:30:23 (3200): Browser 1 loading state changed to 0 for url '[internal]'
+[2024-02-12 11:30:23] 11:30:23 (3200): Frame loaded for job 0 on browser 1
+[2024-02-12 11:30:23] 11:30:23 (3200): Found job 0 in group 0 (of 2 groups)
+[2024-02-12 11:30:23] 11:30:23 (3200): Executing dev tools method 'Emulation.setEmulatedMedia' for browser 1
+[2024-02-12 11:30:23] 11:30:23 (3200): Executing dev tools method 'Page.getLayoutMetrics' for browser 1
+[2024-02-12 11:30:24] 11:30:24 (3200): Received dev tools message on browser 1: '{"id":3,"result":{}}' (size: 20)
+[2024-02-12 11:30:24] 11:30:24 (3200): Finished dev tools method on browser 1 (message ID: 3)
+[2024-02-12 11:30:24] 11:30:24 (3200): Received dev tools message on browser 2: '{"id":1,"result":{}}' (size: 20)
+[2024-02-12 11:30:24] 11:30:24 (3200): Finished dev tools method on browser 2 (message ID: 1)
+[2024-02-12 11:30:24] 11:30:24 (3200): Received dev tools message on browser 2: '{"id":2,"result":{"layoutViewport":{"pageX":0,"pageY":0,"clientWidth":1024,"clientHeight":1280},"visualViewport":{"offsetX":0,"offsetY":0,"pageX":0,"pageY":0,"clientWidth":1024,"clientHeight":1280,"scale":1,"zoom":1},"contentSize":{"x":0,"y":0,"width":1024,"height":1280},"cssLayoutViewport":{"pageX":0,"pageY":0,"clientWidth":1024,"clientHeight":1280},"cssVisualViewport":{"offsetX":0,"offsetY":0,"pageX":0,"pageY":0,"clientWidth":1024,"clientHeight":1280,"scale":1,"zoom":1},"cssContentSize":{"x":0,"y":0,"width":1024,"height":1280}}}' (size: 536)
+[2024-02-12 11:30:24] 11:30:24 (3200): Finished dev tools method on browser 2 (message ID: 2)
+[2024-02-12 11:30:24] 11:30:24 (3200): Sending DOM-visit process message for browser 2 (job ID: 1)
+[2024-02-12 11:30:24] 11:30:24 (3200): Received dev tools message on browser 1: '{"id":4,"result":{"layoutViewport":{"pageX":0,"pageY":0,"clientWidth":1024,"clientHeight":1280},"visualViewport":{"offsetX":0,"offsetY":0,"pageX":0,"pageY":0,"clientWidth":1024,"clientHeight":1280,"scale":1,"zoom":1},"contentSize":{"x":0,"y":0,"width":1024,"height":1280},"cssLayoutViewport":{"pageX":0,"pageY":0,"clientWidth":1024,"clientHeight":1280},"cssVisualViewport":{"offsetX":0,"offsetY":0,"pageX":0,"pageY":0,"clientWidth":1024,"clientHeight":1280,"scale":1,"zoom":1},"cssContentSize":{"x":0,"y":0,"width":1024,"height":1280}}}' (size: 536)
+[2024-02-12 11:30:24] 11:30:24 (3200): Finished dev tools method on browser 1 (message ID: 4)
+[2024-02-12 11:30:24] 11:30:24 (3200): Sending DOM-visit process message for browser 1 (job ID: 0)
+[2024-02-12 11:30:24] 11:30:24 (3200): Received IPC message 'OnDomVisited' from Renderer process: 'OnDomVisited'
+[2024-02-12 11:30:24] 11:30:24 (3200): Received message from render process with 56 bytes
+[2024-02-12 11:30:24] 11:30:24 (3200): Processed html for browser 1
+[2024-02-12 11:30:24] 11:30:24 (3200): [IPAER] (Browser process) message received from upstream CEF: browserId=1, message name=OnDomVisited
+[2024-02-12 11:30:24] 11:30:24 (3200): Received IPC message 'OnDomVisited' from Renderer process: 'OnDomVisited'
+[2024-02-12 11:30:24] 11:30:24 (3200): Received message from render process with 56 bytes
+[2024-02-12 11:30:24] 11:30:24 (3200): Processed html for browser 2
+[2024-02-12 11:30:24] 11:30:24 (3200): [IPAER] (Browser process) message received from upstream CEF: browserId=2, message name=OnDomVisited
+[2024-02-12 11:30:24] 11:30:24 (9056): Apply render delay for : 20 ms
+[2024-02-12 11:30:24] 11:30:24 (5732): Apply render delay for : 20 ms
+[2024-02-12 11:30:24] 11:30:24 (5732): Finished waiting for render delay
+[2024-02-12 11:30:24] 11:30:24 (9056): Finished waiting for render delay
+[2024-02-12 11:30:24] 11:30:24 (5732): Scaling content to paper using a scale of 1
+[2024-02-12 11:30:24] 11:30:24 (9056): Scaling content to paper using a scale of 1
+[2024-02-12 11:30:24] 11:30:24 (5732): Printing from browser to 'C:\Users\renel\AppData\Local\Temp\7BB6.tmp'
+[2024-02-12 11:30:24] 11:30:24 (9056): Printing from browser to 'C:\Users\renel\AppData\Local\Temp\7BB7.tmp'
+[2024-02-12 11:30:26] 11:30:26 (3200): Received browser print callback for path 'C:\Users\renel\AppData\Local\Temp\7BB7.tmp' (1)
+[2024-02-12 11:30:26] 11:30:26 (3200): Print finished for browser 1(success: 1)
+[2024-02-12 11:30:26] 11:30:26 (3200): Resolving job for browser 1 with 20042 bytes
+[2024-02-12 11:30:26] 11:30:26 (1824): Closing browser 1
+[2024-02-12 11:30:26] 11:30:26 (3200): Received browser print callback for path 'C:\Users\renel\AppData\Local\Temp\7BB6.tmp' (1)
+[2024-02-12 11:30:26] 11:30:26 (3200): Print finished for browser 2(success: 1)
+[2024-02-12 11:30:26] 11:30:26 (3200): Resolving job for browser 2 with 20042 bytes
+[2024-02-12 11:30:26] 11:30:26 (1824): Closing browser 2
+[2024-02-12 11:30:26] 11:30:26 (3200): Received dev tools message on browser 1: '{"method":"Inspector.detached","params":{"reason":"Render process gone."}}' (size: 74)
+[2024-02-12 11:30:26] 11:30:26 (3200): Destroying browser id 1, 1 remain
+[2024-02-12 11:30:26] 11:30:26 (3200): Browser 1 closed for job 0
+[2024-02-12 11:30:26] 11:30:26 (3200): Found job 0 in group 0 (of 2 groups)
+[2024-02-12 11:30:26] 11:30:26 (3200): Job group 0 finished
+[2024-02-12 11:30:26] 11:30:26 (3200): CefMessagePumpStd::Quit()
+[2024-02-12 11:30:26] 11:30:26 (772): Storing new job result 0
+[2024-02-12 11:30:26] Received job result 0
+[2024-02-12 11:30:26] 11:30:26 (772): Opening document from job result 0
+[2024-02-12 11:30:26] 11:30:26 (772): Releasing job result 0
+[2024-02-12 11:30:26] 11:30:26 (772): PdfDocumentFactory created document 00000241FC429110 from 20042 bytes
+[2024-02-12 11:30:26] 11:30:26 (772): Document opened from pointer
+[2024-02-12 11:30:26] 11:30:26 (772): Storing new document 0
+[2024-02-12 11:30:26] Created document 0 from job result 0
+[2024-02-12 11:30:26] Document 0 has 1 references remaining (+1)
+[2024-02-12 11:30:26] Retrieving binary data for document fed57793-36d7-41cd-b83c-033a3191d836 with 0 signatures
+[2024-02-12 11:30:26] Attempting to obtain value for a key 'IronPdf.LicenseKey' from settings
+[2024-02-12 11:30:26] Couldn't find key 'IronPdf.LicenseKey' in json config files: Value cannot be null. (Parameter 'path')
+[2024-02-12 11:30:26] Couldn't find key 'IronPdf.LicenseKey' in xml config files: Value cannot be null. (Parameter 'path')
+[2024-02-12 11:30:26] Warning! Error while retrieving app settings value
+[2024-02-12 11:30:26] System.ArgumentNullException: Value cannot be null. (Parameter 'path')
+   at System.IO.Path.GetFullPath(String path)
+   at IronSoftware.IronConfigurationManager.IronConfigurations.ReadAzureFunctionConfig(String key, Assembly context)
+   at IronSoftware.IronConfigurationManager.IronConfigurations.TryReadFromDefaultConfigs(String key, Assembly context, String& configValue)
+   at IronSoftware.IronConfigurationManager.IronConfigurations.Read(String key, Assembly context)
+   at IronSoftware.Licenses.LicenseManager.GetConfigValue(String key, Assembly assembly)
+[2024-02-12 11:30:26] Attempting to obtain value for a key 'IronSuite.LicenseKey' from settings
+[2024-02-12 11:30:27] Couldn't find key 'IronSuite.LicenseKey' in json config files: Value cannot be null. (Parameter 'path')
+[2024-02-12 11:30:27] Couldn't find key 'IronSuite.LicenseKey' in xml config files: Value cannot be null. (Parameter 'path')
+[2024-02-12 11:30:27] Warning! Error while retrieving app settings value
+[2024-02-12 11:30:27] System.ArgumentNullException: Value cannot be null. (Parameter 'path')
+   at System.IO.Path.GetFullPath(String path)
+   at IronSoftware.IronConfigurationManager.IronConfigurations.ReadAzureFunctionConfig(String key, Assembly context)
+   at IronSoftware.IronConfigurationManager.IronConfigurations.TryReadFromDefaultConfigs(String key, Assembly context, String& configValue)
+   at IronSoftware.IronConfigurationManager.IronConfigurations.Read(String key, Assembly context)
+   at IronSoftware.Licenses.LicenseManager.GetConfigValue(String key, Assembly assembly)
+[2024-02-12 11:30:27] Error 0x01 while validating license key
+[2024-02-12 11:30:27] IronSoftware.Exceptions.LicensingException: IronPDF must be licensed for development.
+Please receive a free trial key instantly to your email by visiting:
+https://ironpdf.com/licensing/?utm_source=product
+   at IronPdfEngine.IronPdfServiceHandler.Pdfium_GetBinaryData(IAsyncStreamReader`1 requestStream, IServerStreamWriter`1 responseStream, ServerCallContext context) in D:\a\1\src\IronPdfEngine\IronPdfServiceHandler.cs:line 183
+[2024-02-12 11:30:27] 11:30:27 (3200): Received dev tools message on browser 2: '{"method":"Inspector.detached","params":{"reason":"Render process gone."}}' (size: 74)
+[2024-02-12 11:30:27] 11:30:27 (3200): Destroying browser id 2, 0 remain
+[2024-02-12 11:30:27] 11:30:27 (3200): Browser 2 closed for job 1
+[2024-02-12 11:30:27] 11:30:27 (3200): Found job 1 in group 1 (of 1 groups)
+[2024-02-12 11:36:24] ---------- Microsoft Windows NT 10.0.19045.0 (D:\APP\CSCA\IronSoftware.log) ----------
+[2024-02-12 11:36:24] Using deployment directory 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:36:24] Creating deployment candidates using root path 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\' (download: False)
+[2024-02-12 11:36:24] Creating folder deployments for win-x64
+[2024-02-12 11:36:24] Creating embedded deployments for win-x64
+[2024-02-12 11:36:24] Successfully located 'IronPdfInterop' at 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:36:24] Warning! Missing deployment configuration file for deployment 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:36:24] IronSoftware.Exceptions.IronSoftwareDeploymentConfigurationMissingException: Error while locating deployment configuration file 'Pdfium*.deployment.json' within 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+   at IronSoftware.Deployment.SmartDeploymentBase.GetDeploymentConfiguration(IDeployment deployment)
+   at IronSoftware.Deployment.SmartDeploymentBase.ExecuteDeploymentCommands(IDeployment deployment)
+   at IronSoftware.Deployment.SmartDeploymentBase.Deploy(Boolean download)
+[2024-02-12 11:36:24] Attempting to load Windows library 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronPdfInterop.dll'
+[2024-02-12 11:36:24] Attempting to load Windows library 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronPdfInterop.dll'
+[2024-02-12 11:36:24] Successfully loaded native library from 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronPdfInterop.dll'
+[2024-02-12 11:36:24] Successfully loaded 'IronPdfInterop' version '2024.1.0.143' from 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:36:24] Successfully deployed 'Pdfium' using 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:36:24] Creating new job collection resource
+[2024-02-12 11:36:24] Creating new document collection resource
+[2024-02-12 11:36:24] Successfully initialized local pdf client
+[2024-02-12 11:36:24] Initializing local Chrome client...
+[2024-02-12 11:36:24] Using deployment directory 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:36:24] Creating deployment candidates using root path 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\' (download: False)
+[2024-02-12 11:36:24] Creating folder deployments for win-x64
+[2024-02-12 11:36:24] Creating embedded deployments for win-x64
+[2024-02-12 11:36:24] Successfully located 'IronInterop' at 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:36:24] Determining deployment commands for platform 'Windows' v10.0.19045.0
+[2024-02-12 11:36:24] Using deployment instructions for 'default' v
+[2024-02-12 11:36:24] Attempting to load Windows library 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronInterop.dll'
+[2024-02-12 11:36:24] Attempting to load Windows library 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronInterop.dll'
+[2024-02-12 11:36:24] Successfully loaded native library from 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronInterop.dll'
+[2024-02-12 11:36:24] Successfully loaded 'IronInterop' version '2024.1.0.143' from 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:36:24] Successfully deployed 'Chrome' using 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:36:24] Initializing Chrome renderer for OS Name: Windows, Identifier: win, Version: 10.0.19045.0, VersionName: , Domain: IronPdfEngineConsole, Thread: , Path: D:\APP\CSCA
+[2024-02-12 11:36:24] 11:36:24 (12416): ~ Chrome renderer v2024.1.0.143~
+[2024-02-12 11:36:24] 11:36:24 (12416): register JobManager as publisher for event_readyToInitializeNetworkEventsDevToolsHandler
+[2024-02-12 11:36:24] 11:36:24 (12416): [EventRegistry] Register event_readyToInitializeNetworkEventsDevToolsHandler for a publisher
+[2024-02-12 11:36:24] 11:36:24 (12416): IsSingleProcess: 0
+[2024-02-12 11:36:24] 11:36:24 (12416): Creating Cef proxy controller
+[2024-02-12 11:36:24] 11:36:24 (12416): Creating Cef interface
+[2024-02-12 11:36:24] 11:36:24 (12416): JobManager subscribes a new sub, eventStr=event_readyToInitializeNetworkEventsDevToolsHandler
+[2024-02-12 11:36:24] 11:36:24 (12416): JobManager subscribes a new sub, eventStr=event_readyToInitializeNetworkEventsDevToolsHandler
+[2024-02-12 11:36:24] 11:36:24 (12416): Destroying Cef proxy event handler
+[2024-02-12 11:36:24] 11:36:24 (12416): Initializing Cef proxy controller
+[2024-02-12 11:36:24] 11:36:24 (12416): Using subprocess path 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronCefSubprocess.exe'
+[2024-02-12 11:36:24] 11:36:24 (12416): Using framework path 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:36:24] 11:36:24 (12416): Using locales path 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\\locales'
+[2024-02-12 11:36:24] 11:36:24 (12416): Using resources path 'D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\'
+[2024-02-12 11:36:24] 11:36:24 (12416): Launching child process '"D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronPdfEngineConsole.exe" --browser-subprocess-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronCefSubprocess.exe" --no-sandbox --lang=en-US --log-file=cef.log --log-severity=disable --resources-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20" --locales-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\\locales" --disable-features=CalculateNativeWinOcclusion,WinUseBrowserSpellChecker,BackForwardCache host=127.0.0.1 port=33350 docker_build=false keep_alive=true linux_and_docker_auto_config=false skip_initialization=false single_process=false chrome_browser_limit=30 chrome_gpu_mode=0 linux_and_docker_auto_config=true programming_language=nodejs enable_debug=false'
+[2024-02-12 11:36:24] 11:36:24 (12416): gpu_mode: '0'
+[2024-02-12 11:36:24] 11:36:24 (8860): Launching child process '"D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronCefSubprocess.exe" --type=gpu-process --no-sandbox --headless --locales-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\\locales" --log-severity=disable --resources-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20" --lang=en-US --user-data-dir="C:\Users\renel\AppData\Local\Temp" /prefetch:2'
+[2024-02-12 11:36:24] 11:36:24 (8860): gpu_mode: '0'
+[2024-02-12 11:36:24] 11:36:24 (12416): Cef initialization succeeded
+[2024-02-12 11:36:24] Successfully initialized local Chrome client
+[2024-02-12 11:36:24] 11:36:24 (8860): Cef context initialized
+[2024-02-12 11:36:24] 11:36:24 (8860): Registering custom scheme for rendering raw html
+[2024-02-12 11:36:24] 11:36:24 (8860): Successfully registered custom scheme
+[2024-02-12 11:36:24] 11:36:24 (8860): Cef engine initialization complete
+[2024-02-12 11:36:24] 11:36:24 (8860): Launching child process '"D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronCefSubprocess.exe" --type=utility --utility-sub-type=network.mojom.NetworkService --lang=en-US --service-sandbox-type=none --ignore-urlfetcher-cert-requests --no-sandbox --ignore-certificate-errors --mute-audio --ignore-certificate-errors --locales-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\\locales" --log-severity=disable --resources-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20" --lang=en-US --user-data-dir="C:\Users\renel\AppData\Local\Temp" /prefetch:8'
+[2024-02-12 11:36:24] 11:36:24 (8860): gpu_mode: '0'
+[2024-02-12 11:36:34] 11:36:34 (1964): Generating pdf from html
+[2024-02-12 11:36:34] 11:36:34 (1964): BROWSER SETTINGS:
+View: 1024x1280
+Enable Javascript: 1
+Username: 
+Cookies len: 0
+
+[2024-02-12 11:36:34] 11:36:34 (1964): RENDER SETTINGS:
+Backgrounds: 1, Emulate Screen: 1, Forms: 1, Landscape : 0, GrayScale : 0
+WaitForType: RenderDelay, Timeout: 10000, NetworkIdle duration: 500, Num allowed inflight: 0, Html Query Str: 
+Scale: 1
+Page Size Type: A4
+Custom Page Size: 210x297
+Actual Page Size: 210x297
+Page Margin Type: 2
+Margin Top: 0.39, Right: 0.38, Bottom: 0.38, Left: 0.39
+Header Html: 
+Footer Html: 
+Javascript: 
+Autosize Screen: 0, PPI: 96
+Title: 
+First Page Number: 1
+Save Path: 
+Render Delay: 20
+Max Header Height: 200, Max Footer Height : 200
+
+[2024-02-12 11:36:34] 11:36:34 (1964): Created new job group 0 for new document
+[2024-02-12 11:36:34] 11:36:34 (1964): Created job group 0
+[2024-02-12 11:36:34] 11:36:34 (1964): Queuing job 0
+[2024-02-12 11:36:34] 11:36:34 (1964): Checking for browser availability (0/30)
+[2024-02-12 11:36:34] 11:36:34 (1964): Creating new browser after waiting 0 seconds
+[2024-02-12 11:36:34] 11:36:34 (8860): Created browser id 1, 1 exist
+[2024-02-12 11:36:34] 11:36:34 (8860): Browser 1 created and ready for assignment
+[2024-02-12 11:36:34] 11:36:34 (8860): Assigning job 0 to browser 1
+[2024-02-12 11:36:34] 11:36:34 (8860): Processing job for html content on browser 1
+[2024-02-12 11:36:34] 11:36:34 (8860): Launching child process '"D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronCefSubprocess.exe" --type=renderer --locales-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\\locales" --log-severity=disable --resources-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20" --user-data-dir="C:\Users\renel\AppData\Local\Temp"'
+[2024-02-12 11:36:34] 11:36:34 (8860): gpu_mode: '0'
+[2024-02-12 11:36:34] 11:36:34 (8860): Launching child process '"D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\IronCefSubprocess.exe" --type=renderer --locales-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20\\locales" --log-severity=disable --resources-dir-path="D:\APP\CSCA\node_modules\@ironsoftware\ironpdf-engine-windows-x64\ironpdf-engine-bin-2024.1.20" --user-data-dir="C:\Users\renel\AppData\Local\Temp"'
+[2024-02-12 11:36:34] 11:36:34 (8860): gpu_mode: '0'
+[2024-02-12 11:36:34] 11:36:34 (8860): Browser 1 loading state changed to 1 for url ''
+[2024-02-12 11:36:34] 11:36:34 (11824): Received resource request from null for [internal] on browser 1 (nav: 1, dl: 0)
+[2024-02-12 11:36:34] 11:36:34 (11824): Resolved resource request using default handler
+[2024-02-12 11:36:34] 11:36:34 (11824): Received resource request from null for [internal] on browser 1 (nav: 1, dl: 0)
+[2024-02-12 11:36:34] 11:36:34 (11824): Resolved resource request using default handler
+[2024-02-12 11:36:34] 11:36:34 (11824): Creating resource handler for scheme http using url [internal] on browser 1
+[2024-02-12 11:36:34] 11:36:34 (8860): Browser 1 frame 17179869185 started loading [internal]
+[2024-02-12 11:36:34] 11:36:34 (8860): Browser 1 status: 
+[2024-02-12 11:36:34] 11:36:34 (8860): Received IPC message 'OnBrowserCreated' from Renderer process: 'OnBrowserCreated'
+[2024-02-12 11:36:34] 11:36:34 (8860): Received message from render process with 0 bytes
+[2024-02-12 11:36:34] 11:36:34 (8860): [IPAER] (Browser process) message received from upstream CEF: browserId=1, message name=OnBrowserCreated
+[2024-02-12 11:36:34] 11:36:34 (8860): Browser 1 frame 17179869185 ended loading [internal]
+[2024-02-12 11:36:34] 11:36:34 (8860): Browser 1 loading state changed to 0 for url '[internal]'
+[2024-02-12 11:36:34] 11:36:34 (8860): Frame loaded for job 0 on browser 1
+[2024-02-12 11:36:34] 11:36:34 (8860): Found job 0 in group 0 (of 1 groups)
+[2024-02-12 11:36:34] 11:36:34 (8860): Executing dev tools method 'Emulation.setEmulatedMedia' for browser 1
+[2024-02-12 11:36:34] 11:36:34 (8860): Executing dev tools method 'Page.getLayoutMetrics' for browser 1
+[2024-02-12 11:36:34] 11:36:34 (8860): Received dev tools message on browser 1: '{"id":1,"result":{}}' (size: 20)
+[2024-02-12 11:36:34] 11:36:34 (8860): Finished dev tools method on browser 1 (message ID: 1)
+[2024-02-12 11:36:34] 11:36:34 (8860): Received dev tools message on browser 1: '{"id":2,"result":{"layoutViewport":{"pageX":0,"pageY":0,"clientWidth":1024,"clientHeight":1280},"visualViewport":{"offsetX":0,"offsetY":0,"pageX":0,"pageY":0,"clientWidth":1024,"clientHeight":1280,"scale":1,"zoom":1},"contentSize":{"x":0,"y":0,"width":1024,"height":1280},"cssLayoutViewport":{"pageX":0,"pageY":0,"clientWidth":1024,"clientHeight":1280},"cssVisualViewport":{"offsetX":0,"offsetY":0,"pageX":0,"pageY":0,"clientWidth":1024,"clientHeight":1280,"scale":1,"zoom":1},"cssContentSize":{"x":0,"y":0,"width":1024,"height":1280}}}' (size: 536)
+[2024-02-12 11:36:34] 11:36:34 (8860): Finished dev tools method on browser 1 (message ID: 2)
+[2024-02-12 11:36:34] 11:36:34 (8860): Sending DOM-visit process message for browser 1 (job ID: 0)
+[2024-02-12 11:36:34] 11:36:34 (8860): Received IPC message 'OnDomVisited' from Renderer process: 'OnDomVisited'
+[2024-02-12 11:36:34] 11:36:34 (8860): Received message from render process with 56 bytes
+[2024-02-12 11:36:34] 11:36:34 (8860): Processed html for browser 1
+[2024-02-12 11:36:34] 11:36:34 (8860): [IPAER] (Browser process) message received from upstream CEF: browserId=1, message name=OnDomVisited
+[2024-02-12 11:36:34] 11:36:34 (10876): Apply render delay for : 20 ms
+[2024-02-12 11:36:34] 11:36:34 (10876): Finished waiting for render delay
+[2024-02-12 11:36:34] 11:36:34 (10876): Scaling content to paper using a scale of 1
+[2024-02-12 11:36:34] 11:36:34 (10876): Printing from browser to 'C:\Users\renel\AppData\Local\Temp\226D.tmp'
+[2024-02-12 11:36:34] 11:36:34 (8860): Received browser print callback for path 'C:\Users\renel\AppData\Local\Temp\226D.tmp' (1)
+[2024-02-12 11:36:34] 11:36:34 (8860): Print finished for browser 1(success: 1)
+[2024-02-12 11:36:34] 11:36:34 (8860): Resolving job for browser 1 with 13361 bytes
+[2024-02-12 11:36:34] 11:36:34 (12552): Closing browser 1
+[2024-02-12 11:36:34] 11:36:34 (8860): Received dev tools message on browser 1: '{"method":"Inspector.detached","params":{"reason":"Render process gone."}}' (size: 74)
+[2024-02-12 11:36:34] 11:36:34 (8860): Destroying browser id 1, 0 remain
+[2024-02-12 11:36:34] 11:36:34 (8860): Browser 1 closed for job 0
+[2024-02-12 11:36:34] 11:36:34 (8860): Found job 0 in group 0 (of 1 groups)
+[2024-02-12 11:36:34] 11:36:34 (8860): Job group 0 finished
+[2024-02-12 11:36:34] 11:36:34 (8860): CefMessagePumpStd::Quit()
+[2024-02-12 11:36:34] 11:36:34 (1964): Storing new job result 0
+[2024-02-12 11:36:34] Received job result 0
+[2024-02-12 11:36:34] 11:36:34 (1964): Opening document from job result 0
+[2024-02-12 11:36:34] 11:36:34 (1964): Releasing job result 0
+[2024-02-12 11:36:34] 11:36:34 (1964): PdfDocumentFactory created document 0000021EA2A5C600 from 13361 bytes
+[2024-02-12 11:36:34] 11:36:34 (1964): Document opened from pointer
+[2024-02-12 11:36:34] 11:36:34 (1964): Storing new document 0
+[2024-02-12 11:36:34] Created document 0 from job result 0
+[2024-02-12 11:36:34] Document 0 has 1 references remaining (+1)
+[2024-02-12 11:36:34] Retrieving binary data for document 59d436c6-44c9-4453-b8b3-edec4f9b59ac with 0 signatures
+[2024-02-12 11:36:34] Attempting to obtain value for a key 'IronPdf.LicenseKey' from settings
+[2024-02-12 11:36:35] Couldn't find key 'IronPdf.LicenseKey' in json config files: Value cannot be null. (Parameter 'path')
+[2024-02-12 11:36:35] Couldn't find key 'IronPdf.LicenseKey' in xml config files: Value cannot be null. (Parameter 'path')
+[2024-02-12 11:36:35] Warning! Error while retrieving app settings value
+[2024-02-12 11:36:35] System.ArgumentNullException: Value cannot be null. (Parameter 'path')
+   at System.IO.Path.GetFullPath(String path)
+   at IronSoftware.IronConfigurationManager.IronConfigurations.ReadAzureFunctionConfig(String key, Assembly context)
+   at IronSoftware.IronConfigurationManager.IronConfigurations.TryReadFromDefaultConfigs(String key, Assembly context, String& configValue)
+   at IronSoftware.IronConfigurationManager.IronConfigurations.Read(String key, Assembly context)
+   at IronSoftware.Licenses.LicenseManager.GetConfigValue(String key, Assembly assembly)
+[2024-02-12 11:36:35] Attempting to obtain value for a key 'IronSuite.LicenseKey' from settings
+[2024-02-12 11:36:35] Couldn't find key 'IronSuite.LicenseKey' in json config files: Value cannot be null. (Parameter 'path')
+[2024-02-12 11:36:35] Couldn't find key 'IronSuite.LicenseKey' in xml config files: Value cannot be null. (Parameter 'path')
+[2024-02-12 11:36:35] Warning! Error while retrieving app settings value
+[2024-02-12 11:36:35] System.ArgumentNullException: Value cannot be null. (Parameter 'path')
+   at System.IO.Path.GetFullPath(String path)
+   at IronSoftware.IronConfigurationManager.IronConfigurations.ReadAzureFunctionConfig(String key, Assembly context)
+   at IronSoftware.IronConfigurationManager.IronConfigurations.TryReadFromDefaultConfigs(String key, Assembly context, String& configValue)
+   at IronSoftware.IronConfigurationManager.IronConfigurations.Read(String key, Assembly context)
+   at IronSoftware.Licenses.LicenseManager.GetConfigValue(String key, Assembly assembly)
+[2024-02-12 11:36:35] Error 0x01 while validating license key
+[2024-02-12 11:36:35] IronSoftware.Exceptions.LicensingException: IronPDF must be licensed for development.
+Please receive a free trial key instantly to your email by visiting:
+https://ironpdf.com/licensing/?utm_source=product
+   at IronPdfEngine.IronPdfServiceHandler.Pdfium_GetBinaryData(IAsyncStreamReader`1 requestStream, IServerStreamWriter`1 responseStream, ServerCallContext context) in D:\a\1\src\IronPdfEngine\IronPdfServiceHandler.cs:line 183

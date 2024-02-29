@@ -1,0 +1,28 @@
+<div class="tab-content" id="nav-tabContent">
+    <div class="Confirmationdesaisie" id="nav-confirmationdesaisie" role="tabpanel" aria-labelledby="nav-confirmationdesaisie-tab" tabindex="0"><%- include("./form/confirmationdesaisie.ejs") %></div>
+    <div class="Mainlevée" id="nav-Mainlevée" role="tabpanel" aria-labelledby="nav-Mainlevée-tab" tabindex="0"><%- include("./form/mainlevee.ejs") %></div>
+    <div class="Oppositionauxopérationssuspects" id="nav-oos" role="tabpanel" aria-labelledby="nav-oos-tab" tabindex="0"><%- include("./form/oos.ejs") %></div>
+    <div class="ConfiscatonCSCA" id="nav-confiscatoncsca" role="tabpanel" aria-labelledby="nav-confiscatoncsca-tab" tabindex="0"><%- include("./form/confiscatoncsca.ejs") %></div>
+    <div class="OpositionauxConfiscatonCSCA" id="nav-opositionauxconfiscatoncsca" role="tabpanel" aria-labelledby="nav-opositionauxconfiscatoncsca-tab" tabindex="0"><%- include("./form/opositionauxconfiscatoncsca.ejs") %></div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const divs = document.querySelectorAll('.tab-content > div');
+      const urlActuelle = window.location.href;
+      const urlSearchParams = new URLSearchParams(urlActuelle.split('?')[1]);
+      const ajoutParam = urlSearchParams.get('ajout');
+      const select_default_values = document.querySelectorAll('.select_default_value');
+      select_default_values.forEach((select_default_value)=>{
+        if(select_default_value.innerHTML===""){
+          select_default_value.innerHTML="Sélectionner..."
+        }
+      })
+      divs.forEach(function(div) {
+        if (div.classList.contains(ajoutParam)) {
+          div.classList.remove('d-none');
+        } else {
+          div.classList.add('d-none');
+        }
+      });
+    });
+</script>

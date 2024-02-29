@@ -1,8 +1,228 @@
-<nav>
-    <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <button class="nav-link active" id="nav-ajoutdossier-tab" data-bs-toggle="tab" data-bs-target="#nav-ajoutdossier" type="button" role="tab" aria-controls="nav-ajoutdossier" aria-selected="true">Ajout de Dossier</button>
-      <button class="nav-link" id="nav-bienmobilier-tab" data-bs-toggle="tab" data-bs-target="#nav-bienmobilier" type="button" role="tab" aria-controls="nav-bienmobilier" aria-selected="false">Ajout de Bien Mobilier</button>
-      <button class="nav-link" id="nav-bienimmobilier-tab" data-bs-toggle="tab" data-bs-target="#nav-bienimmobilier" type="button" role="tab" aria-controls="nav-bienimmobilier" aria-selected="false">Ajout de Bien Immobilier</button>
-      <button class="nav-link" id="nav-comptebancaire-tab" data-bs-toggle="tab" data-bs-target="#nav-comptebancaire" type="button" role="tab" aria-controls="nav-comptebancaire" aria-selected="false">Ajout de Compte Bancaire</button>
+<style>
+  .nav-link{background-color: #032F54; color: #fff;margin: 1px;}
+  .nav-link:hover{background-color: #003d6e; color: #fff;}
+  i.bi-plus-circle{color: #fff}
+</style>
+<div class="container-fluid mb-5">
+  <div class="row bg-bleu rounded-top">
+    <div
+      class="col py-3 bg-bleu d-flex justify-content-start align-items-center rounded-top"
+    >
+      <h4 class="bg-bleu m-0" id="H4iokoay">Suivis au Parquet</h4>
+    </div>
+    <div
+      class="col py-3 bg-bleu d-flex justify-content-end align-items-center rounded-top"
+    >
+      <h4 class="bg-bleu m-0">Dossier N° <%= id_dossier %></h4>
+    </div>
+  </div>
+  <nav class="row" id="grandnav">
+    <div class="nav nav-tabs p-0" id="nav-tab" role="tablist">
+      <!-- <button class="nav-link Dossier" id="nav-ajoutdossier-tab" data-bs-toggle="tab" data-bs-target="#nav-ajoutdossier" type="button" role="tab" aria-controls="nav-ajoutdossier" aria-selected="true"><i class="bi bi-plus-circle"></i> Dossier</button> -->
+      <button
+        class="col nav-link BienMobilier rounded-0"
+        id="nav-bienmobilier-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#nav-bienmobilier"
+        type="button"
+        role="tab"
+        aria-controls="nav-bienmobilier"
+        aria-selected="false"
+      >
+        <i class="bi bi-plus-circle"></i> Bien Mobilier
+      </button>
+      <button
+        class="col nav-link BienImmobilier rounded-0"
+        id="nav-bienimmobilier-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#nav-bienimmobilier"
+        type="button"
+        role="tab"
+        aria-controls="nav-bienimmobilier"
+        aria-selected="false"
+      >
+        <i class="bi bi-plus-circle"></i> Bien Immobilier
+      </button>
+      <button
+        class="col nav-link CompteBancaire rounded-0"
+        id="nav-comptebancaire-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#nav-comptebancaire"
+        type="button"
+        role="tab"
+        aria-controls="nav-comptebancaire"
+        aria-selected="false"
+      >
+        <i class="bi bi-plus-circle"></i> Compte Bancaire
+      </button>
+      <button
+        class="col nav-link Personnephysique rounded-0"
+        id="nav-personnephysique-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#nav-personnephysique"
+        type="button"
+        role="tab"
+        aria-controls="nav-personnephysique"
+        aria-selected="false"
+      >
+        <i class="bi bi-plus-circle"></i> Personne physique
+      </button>
+      <button
+        class="col nav-link PersonneMorale rounded-0"
+        id="nav-personnemorale-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#nav-personnemorale"
+        type="button"
+        role="tab"
+        aria-controls="nav-personnemorale"
+        aria-selected="false"
+      >
+        <i class="bi bi-plus-circle"></i> Personne Morale
+      </button>
     </div>
   </nav>
+
+  <nav class="btn-group petitnav" id="nav-tab" role="tablist">
+    <i
+      class="bi bi-list dropdown-toggle size-2"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+      data-bs-auto-close="true"
+    ></i>
+    <ul class="dropdown-menu p-3 listmenu">
+      <!-- <li><button class="nav-link dropdown-item Dossier" id="nav-ajoutdossier-tab" data-bs-toggle="tab" data-bs-target="#nav-ajoutdossier" type="button" role="tab" aria-controls="nav-ajoutdossier" aria-selected="true"><i class="bi bi-plus-circle"></i> Dossier</button></li> -->
+      <li>
+        <button
+          class="nav-link dropdown-item BienMobilier"
+          id="nav-bienmobilier-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-bienmobilier"
+          type="button"
+          role="tab"
+          aria-controls="nav-bienmobilier"
+          aria-selected="false"
+        >
+          <i class="bi bi-plus-circle"></i> Bien Mobilier
+        </button>
+      </li>
+      <li>
+        <button
+          class="nav-link dropdown-item BienImmobilier"
+          id="nav-bienimmobilier-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-bienimmobilier"
+          type="button"
+          role="tab"
+          aria-controls="nav-bienimmobilier"
+          aria-selected="false"
+        >
+          <i class="bi bi-plus-circle"></i> Bien Immobilier
+        </button>
+      </li>
+      <li>
+        <button
+          class="nav-link dropdown-item CompteBancaire"
+          id="nav-comptebancaire-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-comptebancaire"
+          type="button"
+          role="tab"
+          aria-controls="nav-comptebancaire"
+          aria-selected="false"
+        >
+          <i class="bi bi-plus-circle"></i> Compte Bancaire
+        </button>
+      </li>
+      <li>
+        <button
+          class="nav-link dropdown-item Personnephysique"
+          id="nav-personnephysique-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-personnephysique"
+          type="button"
+          role="tab"
+          aria-controls="nav-personnephysique"
+          aria-selected="false"
+        >
+          <i class="bi bi-plus-circle"></i> Personne physique
+        </button>
+      </li>
+      <li>
+        <button
+          class="nav-link dropdown-item PersonneMorale"
+          id="nav-personnemorale-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#nav-personnemorale"
+          type="button"
+          role="tab"
+          aria-controls="nav-personnemorale"
+          aria-selected="false"
+        >
+          <i class="bi bi-plus-circle"></i> Personne Morale
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".nav-link");
+    const bouton1s = document.querySelectorAll("#grandnav > div > button");
+    const grandnav = document.querySelector("#grandnav");
+    const H4iokoay = document.querySelector("#H4iokoay");
+    const petitnav = document.querySelector(".petitnav");
+    const bouton2s = document.querySelectorAll(".dropdown-menu > li > button");
+    const urlActuelle = window.location.href;
+    const urlSearchParams = new URLSearchParams(urlActuelle.split("?")[1]);
+    const ajoutParam = urlSearchParams.get("ajout");
+    // if (grandnav.clientHeight > 55) {
+    //   petitnav.classList.remove("d-none");
+    //   grandnav.classList.add("d-none");
+    // } else {
+    //   petitnav.classList.add("d-none");
+    //   grandnav.classList.remove("d-none");
+    // // }
+    // if (ajoutParam === "BienImmobilier") {
+    //   H4iokoay.innerHTML = "Ajout de Bien Immobilier";
+    // }
+    // else if (ajoutParam === "BienMobilier") {
+    //   H4iokoay.innerHTML = "Ajout de Bien Mobilier";
+    // }
+    // else if (ajoutParam === "CompteBancaire") {
+    //   H4iokoay.innerHTML = "Ajout de Compte Bancaire";
+    // }
+    // else if (ajoutParam === "Personnephysique") {
+    //   H4iokoay.innerHTML = "Ajout de Personne Physique";
+    // }
+    // else if (ajoutParam === "PersonneMorale") {
+    //   H4iokoay.innerHTML = "Ajout de Personne Morale";
+    // }
+    bouton1s.forEach(function (bouton1) {
+      if (bouton1.classList.contains(ajoutParam)) {
+        bouton1.classList.add("active");
+      } else {
+        bouton1.classList.remove("active");
+      }
+    });
+    bouton2s.forEach(function (bouton2) {
+      if (bouton2.classList.contains(ajoutParam)) {
+        bouton2.classList.add("active");
+      } else {
+        bouton2.classList.remove("active");
+      }
+    });
+
+    buttons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        const valeur = button.textContent.replace(/\s/g, ""); // Récupère le texte du bouton pour la valeur
+        const urlActuelle = window.location.href;
+        const urlentite = urlActuelle.split("?")[0]; // Supprime tous les paramètres existants
+        const urldetajout = urlActuelle.split("?")[1]; // Supprime tous les paramètres existants
+        const urld = urldetajout.split("&")[0]; // Supprime tous les paramètres existants
+        const urlajout = urldetajout.split("&")[1]; // Supprime tous les paramètres existants
+        const urlAvecParametre = `${urlentite}?${urld}&ajout=${valeur}`;
+        window.location.href = urlAvecParametre;
+      });
+    });
+  });
+</script>

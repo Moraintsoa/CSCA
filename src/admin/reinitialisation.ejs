@@ -1,0 +1,226 @@
+<main class="mt-4">
+  <div class="container-fluid px-md-4">
+    <!-- content row -->
+    <div class="row mb-4 g-4">
+      <div class="col">
+        <div class="card border-5 border-warning">
+          <div class="card-body bgc-bleu">
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="bg-warning py-3 px-4 rounded-3">
+                <i class="bi bi-wrench-adjustable size-2"></i>
+              </div>
+
+              <div class="text-end">
+                <h1 class="m-0">
+                  <% if (lesutilisateurs) { let i=0; for (const utilisateur of
+                  lesutilisateurs){ if (utilisateur.needreinitialisation===1){
+                  i++ }}%> <%- i %>
+                </h1>
+                <div class="text-capitalize">
+                  <% if (i>1) { %> Comptes en attente de Réinitialisation <%}
+                  else{%> Compte en attente de Réinitialisation <%}%>
+                </div>
+                <%}%>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ content row -->
+
+    <!-- content row -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card card-table">
+          <div class="card-header bgc-bleu">
+            <div
+              class="d-flex justify-content-between align-items-center w-100"
+            >
+              <small>
+                <strong
+                  >Liste de demande réinitialisation de mot de passe</strong
+                >
+              </small>
+
+              <a href="#!" class="btn btn-sm btn-mode"></a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table text-center table-sm">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Email</th>
+                    <th>Réinitialisation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% if (lesutilisateurs) {%> <% for (const utilisateur of
+                  lesutilisateurs){ if (utilisateur.needreinitialisation===1)
+                  {%>
+                  <tr>
+                    <td>
+                      <img
+                        src="img/profil/<%= utilisateur.photo %>"
+                        alt="profil"
+                        height="30px"
+                        width="30px"
+                        class="rounded-circle border border-3"
+                      />
+                    </td>
+                    <td><%- utilisateur.nom %></td>
+                    <td><%- utilisateur.prenom %></td>
+                    <td><%- utilisateur.email %></td>
+                    <td>
+                      <button
+                        class="reinitialisationdemotdepassebouton btn btn-outline-warning"
+                        id="<%- utilisateur.id %>"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#reinitialisationdemotdepasse<%- utilisateur.id %>"
+                        data-bs-whatever="Motdepassetoemail"
+                      >
+                        Réinitialiser
+                      </button>
+                    </td>
+                    <div
+                      class="modal fade"
+                      id="reinitialisationdemotdepasse<%- utilisateur.id %>"
+                      tabindex="-1"
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header bgc-bleu">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">
+                              Réinitialisation de mot de passe de <%-
+                              utilisateur.prenom %>
+                            </h1>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div class="modal-body">
+                            <form>
+                              <div class="mb-3">
+                                <label
+                                  for="maildestinatair"
+                                  class="col-form-label"
+                                  >Destinataire:</label
+                                >
+                                <input
+                                  readonly
+                                  type="mail"
+                                  class="form-control"
+                                  value="<%- utilisateur.email %>"
+                                  id="maildestinatair<%- utilisateur.id %>"
+                                />
+                              </div>
+                              <div class="mb-3">
+                                <label
+                                  for="nouveau_motdepasse"
+                                  class="col-form-label"
+                                  >Son nouveau mot de passe:</label
+                                >
+                                <input
+                                  readonly
+                                  type="text"
+                                  class="form-control"
+                                  id="nouveau_motdepasse<%- utilisateur.id %>"
+                                />
+                              </div>
+                              <div class="mb-3">
+                                <label for="message" class="col-form-label"
+                                  >Message:</label
+                                >
+                                <textarea
+                                  class="form-control"
+                                  id="message<%- utilisateur.id %>"
+                                ></textarea>
+                              </div>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-bleu"
+                              onclick="reinitialiser('<%- utilisateur.id %>')"
+                            >
+                              Envoyer
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-secondary"
+                              data-bs-dismiss="modal"
+                            >
+                              Annuler
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </tr>
+                  <%}}}%>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ content row -->
+  </div>
+</main>
+<script>
+  function reinitialiser(id) {
+    // Envoyer une requête AJAX au serveur pour supprimer l'utilisateur
+    const newPassword = document.querySelector(`#nouveau_motdepasse${id}`).value;
+    const maildestinatair = document.querySelector(`#maildestinatair${id}`).value;
+    fetch(`/reinitialiser/${id}/${newPassword}/${maildestinatair}`, {
+      method: "POST",
+    }).then((response) => {
+      // Mettre à jour l'interface utilisateur en fonction de la réponse du serveur
+      if (response.ok) {
+        // Afficher un message de confirmation
+        // Recharger la page
+        window.location.reload();
+      } else {
+        // Afficher un message d'erreur
+      }
+    });
+  }
+  const reinitialisationdemotdepassebouton = document.querySelectorAll(
+    ".reinitialisationdemotdepassebouton"
+  );
+  reinitialisationdemotdepassebouton.forEach((reinitialisationbouton) => {
+    reinitialisationbouton.addEventListener("click", async (event) => {
+      const id = event.currentTarget.getAttribute("id");
+      const newPassword = await generateRandomPassword(10);
+      console.log(newPassword);
+      const maildestinatair = document.querySelector(`#maildestinatair${id}`);
+      const nouveau_motdepasse = document.querySelector(
+        `#nouveau_motdepasse${id}`
+      );
+      nouveau_motdepasse.value = newPassword;
+      const textemessage = document.querySelector(`#message${id}`);
+      textemessage.textContent = "Aza adinoina intsony ny mot de passe";
+    });
+  });
+  function generateRandomPassword(length) {
+    const characters = "0123456789ABCDEF"; // Caractères hexadécimaux
+    let password = "";
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      password += characters.charAt(randomIndex);
+    }
+    return password;
+  }
+</script>

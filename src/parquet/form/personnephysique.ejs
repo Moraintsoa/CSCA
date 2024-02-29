@@ -1,0 +1,67 @@
+<style>
+    div label.form-label {
+      font-size: 13px;
+    }
+    .btn-bleu {
+      background-color: #032f54;
+      color: #fff;
+    }
+    .btn-bleu:hover {
+      background-color: #04467c;
+      color: #fff;
+    }
+  </style>
+<%- include("../navmenu.ejs") %>
+  <form class="row" id="ajoutpersonnephysique" action="/personnephysique" method="post">
+    <% if (lesdonnees) { for (const donnee of lesdonnees){%>
+    <input type="text" id="id_csca" name="id_csca" value="<%= donnee.referencecsca %>" hidden>
+      <div class="form-outline mb-1 has-validation col-md-6" id="">
+          <div class="input-group">
+              <input value="<%= donnee.nom %>" type="text" class="form-control form-control-lg shadow-sm" id="nomindividu" name="nomindividu" placeholder="Nom de l'individu">
+          </div>
+          <label for="nomindividu" class="form-label mt-1">Nom de l'individu</label>
+      </div>
+      <div class="form-outline mb-1 has-validation col-md-6" id="">
+          <div class="input-group">
+              <input value="<%= donnee.age %>" type="number" class="form-control form-control-lg shadow-sm" id="age" name="age" placeholder="Âge">
+          </div>
+          <label for="age" class="form-label mt-1">Âge</label>
+      </div>
+      <div class="form-outline mb-1 has-validation col-md-6" id="">
+          <div class="input-group">
+              <select id="sexe" name="sexe" class="form-select form-select-lg shadow-sm" placeholder="Sélectionner...">
+                  <option class="select_default_value" value="<%= donnee.sexe %>"><%= donnee.sexe %></option>
+                  <option value="Homme">Homme</option>
+                  <option value="Femme">Femme</option>
+              </select>
+          </div>
+          <label for="sexe" class="form-label mt-1">Sexe</label>
+      </div>
+      <div class="form-outline mb-1 has-validation col-md-6" id="">
+          <div class="input-group">
+              <input value="<%= donnee.cinpasseport %>" type="number" class="form-control form-control-lg shadow-sm" id="cinpasseport" name="cinpasseport" placeholder="CIN ou Passeport">
+          </div>
+          <label for="cinpasseport" class="form-label mt-1">CIN ou Passeport</label>
+      </div>
+      <div class="form-outline mb-1 has-validation col-md-6" id="">
+          <div class="input-group">
+              <select id="nationalite" name="nationalite" class="form-select form-select-lg shadow-sm" placeholder="Sélectionner...">
+                  <option class="select_default_value" value="<%= donnee.nationalite %>"><%= donnee.nationalite %></option>
+                  <option value="Malagasy">Malagasy</option>
+                  <option value="Italien">Italien</option>
+                  <option value="Allemand">Allemand</option>
+              </select>
+          </div>
+          <label for="nationalite" class="form-label mt-1">Nationalité</label>
+      </div>
+      <div class="form-outline mb-1 has-validation col-md-6" id="">
+          <div class="input-group">
+              <input value="<%= donnee.fonction %>" type="text" class="form-control form-control-lg shadow-sm" id="fonctionindividu" name="fonctionindividu" placeholder="Fonction de l'individu">
+          </div>
+          <label for="fonctionindividu" class="form-label mt-1">Fonction de l'individu</label>
+      </div>
+      <div class="text-center text-lg-start mt-4 pt-2">
+          <button type="submit" class="btn btn-bleu btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Enregistrer</button>
+      </div>
+    <% }} %>
+</form>

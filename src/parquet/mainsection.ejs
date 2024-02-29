@@ -1,6 +1,28 @@
 <div class="tab-content" id="nav-tabContent">
-    <div class="tab-pane fade show active" id="nav-ajoutdossier" role="tabpanel" aria-labelledby="nav-ajoutdossier-tab" tabindex="0"><%- include("./form/ajout_dossier.ejs") %></div>
-    <div class="tab-pane fade" id="nav-bienmobilier" role="tabpanel" aria-labelledby="nav-bienmobilier-tab" tabindex="0"><%- include("./form/bienmobilier.ejs") %></div>
-    <div class="tab-pane fade" id="nav-bienimmobilier" role="tabpanel" aria-labelledby="nav-bienimmobilier-tab" tabindex="0"><%- include("./form/bienimmobilier.ejs") %></div>
-    <div class="tab-pane fade" id="nav-comptebancaire" role="tabpanel" aria-labelledby="nav-comptebancaire-tab" tabindex="0"><%- include("./form/comptebancaire.ejs") %></div>
+    <div class="BienMobilier" id="nav-bienmobilier" role="tabpanel" aria-labelledby="nav-bienmobilier-tab" tabindex="0"><%- include("./form/bienmobilier.ejs") %></div>
+    <div class="BienImmobilier" id="nav-bienimmobilier" role="tabpanel" aria-labelledby="nav-bienimmobilier-tab" tabindex="0"><%- include("./form/bienimmobilier.ejs") %></div>
+    <div class="CompteBancaire" id="nav-comptebancaire" role="tabpanel" aria-labelledby="nav-comptebancaire-tab" tabindex="0"><%- include("./form/comptebancaire.ejs") %></div>
+    <div class="Personnephysique" id="nav-personnephysique" role="tabpanel" aria-labelledby="nav-personnephysique-tab" tabindex="0"><%- include("./form/personnephysique.ejs") %></div>
+    <div class="PersonneMorale" id="nav-personnemorale" role="tabpanel" aria-labelledby="nav-personnemorale-tab" tabindex="0"><%- include("./form/personnemorale.ejs") %></div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const divs = document.querySelectorAll('.tab-content > div');
+      const urlActuelle = window.location.href;
+      const urlSearchParams = new URLSearchParams(urlActuelle.split('?')[1]);
+      const ajoutParam = urlSearchParams.get('ajout');
+      const select_default_values = document.querySelectorAll('.select_default_value');
+      select_default_values.forEach((select_default_value)=>{
+        if(select_default_value.innerHTML===""){
+          select_default_value.innerHTML="Sélectionner..."
+        }
+      })
+      divs.forEach(function(div) {
+        if (div.classList.contains(ajoutParam)) {
+          div.classList.remove('d-none');
+        } else {
+          div.classList.add('d-none');
+        }
+      });
+    });
+</script>

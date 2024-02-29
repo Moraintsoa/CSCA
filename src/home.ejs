@@ -1,60 +1,77 @@
+<style>
+  .active i,.active span{
+    color: rgb(85, 209, 240);
+  }
+</style>
 <div class="container-fluid vh-100 p-0" id="homecontainer">
   <div class="d-flex"id="homemain">
     <div class="bg bg-light w-100 fixed-top" id="homeheader">
       <div class="d-flex align-items-center justify-content-between">
-        <div class="bgc-blanc shadow-sm d-flex align-items-center justify-content-between" id="homeheadersectionlogo">
-          <img src="img/icon.png" alt="" height="54px" width="54px">
-          <h5 class="my-0 me-4">PAC-CSCA</h5>
-        </div>
+        <a href="/" style="text-decoration: none;">
+          <div class="bgc-blanc couleur-bleu shadow-sm d-flex align-items-center justify-content-between" id="homeheadersectionlogo">
+            <img src="img/icon.png" alt="" height="54px" width="54px">
+            <h5 class="my-0 me-4">PAC-CSCA</h5>
+          </div>
+        </a>
 
-        <div class="flex-grow-1 bgc-blanc shadow-sm d-flex align-items-center justify-content-end px-5" id="homeheadersectionnav">
+        <div class="flex-grow-1 bgc-blanc shadow-sm d-flex align-items-center justify-content-end px-3" id="homeheadersectionnav">
           
           <div class="d-flex align-items-center flex-grow-1">
-            <%- include("./parquet/navmenu.ejs") %>
+            
           </div>
 
+          <% if (datas) { %>
           <div class="btn-group d-flex align-items-center gap-3" id="profile">
-            <img src="img/profil.jpg" alt="profil" height="45px" width="45px" class="rounded-circle border border-5 dropdown-toggle" data-bs-auto-close="true" data-bs-toggle="dropdown"  aria-expanded="false" />
+            <img src="img/profil/<%= datas[0].photo %>" alt="profil" height="45px" width="45px" class="rounded-circle border border-5 dropdown-toggle" data-bs-auto-close="true" data-bs-toggle="dropdown"  aria-expanded="false" />
             <h6>
-              <% if (datas) { %>
                   <%= datas[0].nom %>
+                  <%= datas[0].prenom %>
               <% } %>
             </h6> 
             <ul class="dropdown-menu">
               <li>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="/userprofile">
                   <i class="bi bi-person-vcard">
-                    Mon profile
                   </i>
+                  Mon profile
                 </a>
               </li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="/logout"> <i class="bi bi-box-arrow-right couleur-rouge-foncee"> Se deconnecter</i></a></li>
+              <!-- <li><hr class="dropdown-divider"></li> -->
+              <li><a class="dropdown-item" href="/logout"> <i class="bi bi-box-arrow-right couleur-rouge-foncee"> </i>Se deconnecter</a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <div class="bgc-blanc shadow-sm p-0 d-flex justify-content-center"id="aside">
+    <div class="shadow-sm p-0 d-flex justify-content-center bgc-bleu"id="admin_aside">
         
       <div class="container py-5">
-        <a class="row d-flex align-items-center a-menu mb-3" href="#">
-          <i class="bi bi-file-earmark-plus-fill size-2 col"></i>
-          <span class="text-menu col-8 p-0">1er Degré</span>
+        <a class="row d-flex align-items-center a-menu mb-3 ajoutDossier text-white" href="/ajoutDossier">
+          <i class="bi bi-file-earmark-plus size-2 col"></i>
+          <span class="text-menu col-8 p-0">Ajout de Dossier</span>
         </a>
-        <a class="row d-flex align-items-center a-menu mb-3" href="#">
-          <i class="bi bi-person-plus-fill size-2 col"></i>
-          <span class="text-menu col-8 p-0">INDIVIDUS</span>
-        </a>
-        <a class="row d-flex align-items-center a-menu mb-3" href="#">
-          <i class="bi bi-file-earmark-text-fill size-2 col"></i>
-          <span class="text-menu col-8 p-0">JUGE D’INSTRUCTION</span>
+        <a class="row d-flex align-items-center a-menu mb-3 listeDossier text-white" href="/listeDossier">
+          <i class="bi bi-list-task size-2 col"></i>
+          <span class="text-menu col-8 p-0">Liste des Dossiers</span>
         </a>
       </div>
-
     </div>
-    <div class="p-5 w-100 h-100 d-flex justify-content-center" id="mainsection">
-      <%- include("./parquet/mainsection.ejs") %>
+    <div class="row p-5 w-100 h-100 d-flex justify-content-center" id="mainsection">
+      <div class="col-12">
+        <%- include(mainsection) %>
+      </div>
     </div>
   </div>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded",()=>{
+      const urlActuelle = window.location.href
+      const urlSearchParams = new URLSearchParams(urlActuelle.split('/')[3])
+      if(urlSearchParams.get("listeDossier")===""){
+        document.querySelector(`.listeDossier`).classList.replace("listeDossier","active")
+      }
+      else if (urlSearchParams.get("ajoutDossier")===""){
+        document.querySelector(`.ajoutDossier`).classList.replace("ajoutDossier","active")
+      }
+    })
+</script>

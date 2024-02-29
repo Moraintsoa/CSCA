@@ -1,0 +1,60 @@
+<style>
+div label.form-label {font-size: 13px;}
+body{margin-top:20px;}
+.avatar{width:200px;height:200px;}	
+</style>
+<div>
+    <div class="container">
+      <div class="row">
+        <h3 class="">Votre Profile</h3>
+        <hr>
+        <!-- left column -->
+        <div class="col-md-3">
+          <div class="text-center">
+            <% if (datas) { %>
+            <img src="img/profil/<%= datas[0].photo %>" class="avatar img-circle img-thumbnail mb-2" alt="avatar">
+              <h6>
+            <i class="bi bi-pencil-square" style="cursor: pointer;font-style: normal;" data-bs-toggle="modal" data-bs-target="#photoedit"> Changer la photo...</i>
+              </h6>
+            </div>
+          </div>
+          
+          <!-- edit form column -->
+          <div class="col-md-9 personal-info">
+              <div class="form-outline mb-4">
+                <div class="form-group">
+                    <input disabled class="form-control form-control-lg shadow-sm" id="updatemdp" name="updatemdp" type="text" value="<%= datas[0].nip %>">
+                  </div>
+                  <label class="">Votre numéro d'identification personnel</label>
+              </div>
+              <div class="form-outline mb-4" id="editnomprenom">
+                <div class="input-group">
+                  <input disabled type="text" name="nom" id="nom" class="form-control form-control-lg shadow-sm" placeholder="Nom" value="<%= datas[0].nom %>">
+                  <input disabled type="text" name="prenom" id="prenom" class="form-control form-control-lg shadow-sm" placeholder="Prénom" value="<%= datas[0].prenom %>">
+                </div>
+                <label class="form-label mt-1" id="" for="nom"></label>
+                <i class="bi bi-pencil-square" style="cursor: pointer;font-style: normal;" data-bs-toggle="modal" data-bs-target="#nomprenomedit"> Modifier votre nom et prenom</i>
+              </div>
+              <div class="form-outline mb-4">
+                  <div class="input-group">
+                    <input disabled class="form-control form-control-lg shadow-sm" id="updateemail" name="updateemail" type="text" value="<%= datas[0].email %>">
+                  </div>
+                    <label class="form-label mt-1"></label>
+                    <i class="bi bi-pencil-square" style="cursor: pointer;font-style: normal;" data-bs-toggle="modal" data-bs-target="#emailedit"> Modifier votre email</i>
+              </div>
+              <div class="form-outline mb-4">
+                <div class="input-group">
+                  <input disabled class="form-control form-control-lg shadow-sm" id="updatemdp" name="updatemdp" type="text" value="* * * * * * * *">
+                </div>
+                  <label class="form-label mt-1"></label>
+                  <i class="bi bi-pencil-square" style="cursor: pointer;font-style: normal;" data-bs-toggle="modal" data-bs-target="#mdpedit"> Modifier votre mot de passe</i>
+              </div>
+                <% } %>
+          </div>
+      </div>
+    </div>
+</div>
+<%- include("./modification/nomprenom.ejs") %>
+<%- include("./modification/email.ejs") %>
+<%- include("./modification/mdp.ejs") %>
+<%- include("./modification/photo.ejs") %>

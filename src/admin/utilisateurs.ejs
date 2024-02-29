@@ -1,0 +1,123 @@
+<main class="mt-4">
+  <div class="container-fluid px-md-4">
+      <!-- content row -->    
+      <div class="row mb-4 g-4">
+          <div class="col">
+              <!-- dashboard card -->
+              <div class="card border-5 border-success">
+                  <div class="card-body bgc-bleu">
+                      <div class="d-flex justify-content-between align-items-center">
+                          <div class="bg-success py-3 px-4 rounded-3">
+                              <i class="bi bi-people-fill size-2"></i>
+                          </div>
+
+                          <div class="text-end">
+                              <h1 class="m-0">
+                                <% if (lesutilisateurs) {
+                                    let i=0;
+                                    for (const utilisateur of lesutilisateurs){
+                                        if (utilisateur.etat_du_compte==="utilisateur"){
+                                            i++
+                                        }}%>
+                                    <%- i %>
+                              </h1>
+                              <div class="text-capitalize">
+                                        
+                                <% if (i>1) { %>
+                                    Utilisateurs
+                                <%} else{%>
+                                    Utilisateur
+                                <%}%>
+                            </div>
+                            <%}%>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!--/ dashboard card -->
+          </div>
+      </div>
+      <!--/ content row -->   
+
+      <!-- content row -->
+      <div class="row">
+          <div class="col-12">
+              <div class="card card-table">
+                  <div class="card-header bgc-bleu">
+                      <div class="d-flex justify-content-between align-items-center w-100">
+                          <small>
+                              <strong>Liste des utilisateurs</strong>
+                          </small>
+
+                          <a href="#!" class="btn btn-sm btn-mode"></a>
+                      </div>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table text-center table-sm">
+                              <thead>
+                                  <tr>
+                                      <th>
+                                          #
+                                      </th>
+                                      <th>
+                                          Nom
+                                      </th>
+                                      <th>
+                                        Prénom
+                                      </th>
+                                      <th>
+                                          Email
+                                      </th>
+                                      <th>
+                                        Statut
+                                    </th>
+                                      <th>
+                                        Bloquer
+                                      </th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                <% if (lesutilisateurs) {%> <% for (const utilisateur of lesutilisateurs){ if (utilisateur.etat_du_compte==="utilisateur") {%>
+                                  <tr>
+                                    <td><img src="img/profil/<%= utilisateur.photo %>" alt="profil" height="30px" width="30px" class="rounded-circle border border-3 "/></td>
+                                    <td><%- utilisateur.nom %></td>
+                                    <td><%- utilisateur.prenom %></td>
+                                    <td><%- utilisateur.email %></td>
+                                    <td>
+                                        <% if (utilisateur.conncte_stat===1) { %>
+                                            <i class="bi bi-circle-fill" style="color: rgb(12, 136, 12);"></i> actif
+                                        <%} else{%>
+                                            <i class="bi bi-circle-fill" style="color: gray;" ></i> inactif
+                                        <%}%>
+                                    </td>
+                                    <td><button type="button" class="btn btn-outline-danger" onclick="bloquerUtilisateur('<%- utilisateur.id %>')">Bloquer</button></td>
+                                  </tr>
+                                  <%}}}%>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!--/ content row -->
+  </div>
+</main>
+<script>
+    function bloquerUtilisateur(id) {
+  // Envoyer une requête AJAX au serveur pour supprimer l'utilisateur
+  fetch(`/bloquer/${id}`, {
+    method: 'POST',
+  }).then((response) => {
+    // Mettre à jour l'interface utilisateur en fonction de la réponse du serveur
+    if (response.ok) {
+      // Afficher un message de confirmation
+      // Recharger la page
+      window.location.reload();
+    } else {
+      // Afficher un message d'erreur
+    }
+  });
+}
+</script>

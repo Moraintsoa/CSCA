@@ -1,0 +1,93 @@
+<style>
+    div label.form-label {
+      font-size: 13px;
+    }
+  body{background-color: #dcdcdd;}
+  </style>
+  <section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-8 col-lg-6 col-xl-5">
+          <img src="img/logo.png" class="img-fluid" alt="Image d'exemple">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form action="/admin" method="post" id="formlogin">
+            <div class="d-flex align-items-center my-4">
+              <h3>Administrateur</h3>
+            </div>  
+            <!-- Ici Province -->
+            <div class="form-outline mb-4 has-validation" id="divJuridiction">
+              <div class="input-group">
+                <select class="form-select form-select-lg" id="Juridiction" name="Juridiction">
+                  <option value="">Selectionnez une Juridiction</option>
+                  <option value="PAC-Antananarivo">PAC-Antananrivo</option>
+                  <option value="PAC-Antsiranana">PAC-Antsiranana</option>
+                  <option value="PAC-Fianarantsoa">PAC-Fianarantsoa</option>
+                  <option value="PAC-Mahajanga">PAC-Mahajanga</option>
+                  <option value="PAC-Toamasina">PAC-Toamasina</option>
+                  <option value="PAC-Toliara">PAC-Toliara</option>
+                </select>
+              </div>
+              <label class="form-label mt-1" id="labelJuridiction" for="Juridiction">Selectionnez une Juridiction</label>
+            </div>
+            <!-- Ici email -->
+            <div class="form-outline mb-4  has-validation">
+              <input type="text" id="pseudoadmin" name="pseudoadmin" class="form-control form-control-lg shadow-sm" placeholder="Pseudo"/>
+              <label class="form-label mt-1" id="labelemail" for="pseudoadmin">Pseudo</label>
+            </div>
+  
+            <!-- Ici mot de passe -->
+            <div class="form-outline mb-3  has-validation">
+              <input type="password" id="motdepassadmin" name="motdepassadmin" class="form-control form-control-lg shadow-sm"
+                placeholder="Mot de passe" />
+              <label class="form-label mt-1" id="labelmdp" for="motdepassadmin">Votre mot de passe</label>
+            </div>
+            <% if (errorMessage) { %>
+              <div class="alert alert-danger py-1">
+                  <%= errorMessage %>
+              </div>
+            <% } %>
+  
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="submit" class="btn btn-bleu btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Se
+                connecter
+              </button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Se connecter en tant qu'un : <a href="/login" class="link-danger">Utilisateur</a></p>
+            </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+//   const formlogin = document.querySelector("#formlogin");
+//   const email = document.querySelector("#emailutilisateur");
+//   const mdp = document.querySelector("#motdepassutilisateur");
+//   const labelemail = document.querySelector("#labelemail");
+//   const labelMDP = document.querySelector("#labelmdp");
+  
+//   formlogin.addEventListener("submit", function (event) {
+//     if (email.value.trim() === "") {
+//       labelemail.innerHTML = "Remplir le champ par un email ou un Email";
+//       labelemail.classList.add("invalid-feedback")
+//       email.classList.add("is-invalid")
+//       event.preventDefault(); // Empêcher l'envoi du formulaire
+//     }
+//     if (mdp.value.trim() === "") {
+//       labelMDP.innerHTML = "Remplir le champ par votre mot de passe";
+//       labelMDP.classList.add("invalid-feedback")
+//       mdp.classList.add("is-invalid")
+//       event.preventDefault(); // Empêcher l'envoi du formulaire
+//     }
+//   });
+//   email.addEventListener("focus",()=>{
+//     labelemail.classList.remove("invalid-feedback")
+//     labelemail.innerHTML = "Votre email";
+//   })
+//   mdp.addEventListener("focus",()=>{
+//     labelMDP.classList.remove("invalid-feedback")
+//     labelMDP.innerHTML = "Votre mot de passe";
+//   })
+  </script>
+  

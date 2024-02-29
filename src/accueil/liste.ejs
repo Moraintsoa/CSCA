@@ -1,0 +1,358 @@
+<style>
+  td a#siege, td a#parquet{color: #032F54; }
+</style>
+<main class="mt-4">
+  <div class="container-fluid px-md-4">
+      <!-- content row -->    
+      <div class="row mb-4 g-4">
+          <div class="col">
+              <!-- dashboard card -->
+              <div class="card border-5 br-marron">
+                  <div class="card-body bgc-bleu">
+                      <div class="d-flex justify-content-between align-items-center">
+                          <div class="bgc-marron py-3 px-4 rounded-3">
+                              <i class="bi bi-file-earmark-text size-2"></i>
+                          </div>
+
+                          <div class="text-end">
+                              <h1 id="nombreDossier" class="m-0">
+                                0
+                              </h1>
+                              <div class="text-capitalize">
+                               Dossiers
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!--/ dashboard card -->
+          </div>
+      </div>
+      <!--/ content row -->   
+
+      <!-- content row -->
+      <div class="row">
+          <div class="col-12">
+              <div class="card card-table">
+                  <div class="card-header bgc-bleu">
+                      <div class="d-flex justify-content-between align-items-center w-100">
+                          <small>
+                              <strong>Liste des dossier en Parquet</strong>
+                          </small>
+
+                          <a href="#!" class="btn btn-sm btn-mode"></a>
+                      </div>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table table-sm">
+                              <thead>
+                                  <tr>
+                                      <th scope="col">#</th>
+                                      <th scope="col">Infraction</th>
+                                      <th scope="col">Lieu</th>
+                                      <th scope="col">Date</th>
+                                      <th class="text-center" scope="col">Modifier</th>
+                                      <th class="text-center" scope="col">Supprimer</th>
+                                      <th class="text-center" scope="col">Télécharger</th>
+                                  </tr>
+                              </thead>
+                              <tbody id="tbody">
+                                <% if (lesdonnees) {%> <% for (const dossier of lesdonnees){ if(dossier.entite===entiteUser) { %>
+        <tr style="cursor: pointer;" class="couleur-bleu">
+          <td>
+            <a id="parquet" class="d-flex align-items-center <%= datas[0].entite %>" href="/<%= datas[0].entite %>?d=<%= dossier.id %>&ajout=BienMobilier" style="background-color: rgba(255, 255, 255, 0);">
+              <%= dossier.id %>/CSCA
+            </a>
+            <a id="siege" class="d-flex align-items-center <%= datas[0].entite %>" href="/<%= datas[0].entite %>?d=<%= dossier.id %>&ajout=Confirmationdesaisie" style="background-color: rgba(255, 255, 255, 0)">
+              <%= dossier.id %>/CSCA
+            </a>
+          </td>
+          <td>
+            <a id="parquet"class="d-flex align-items-center <%= datas[0].entite %>" href="/<%= datas[0].entite %>?d=<%= dossier.id %>&ajout=BienMobilier" style="background-color: rgba(255, 255, 255, 0)">
+              <%= dossier.infraction %>
+            </a>
+            <a id="siege"class="d-flex align-items-center <%= datas[0].entite %>" href="/<%= datas[0].entite %>?d=<%= dossier.id %>&ajout=Confirmationdesaisie" style="background-color: rgba(255, 255, 255, 0)">
+              <%= dossier.infraction %>
+            </a>
+          </td>
+          <td>
+            <a id="parquet"class="d-flex align-items-center <%= datas[0].entite %>" href="/<%= datas[0].entite %>?d=<%= dossier.id %>&ajout=BienMobilier" style="background-color: rgba(255, 255, 255, 0)">
+              <%= dossier.lieu %>
+            </a>
+            <a id="siege"class="d-flex align-items-center <%= datas[0].entite %>" href="/<%= datas[0].entite %>?d=<%= dossier.id %>&ajout=Confirmationdesaisie" style="background-color: rgba(255, 255, 255, 0)">
+              <%= dossier.lieu %>
+            </a>
+          </td>
+          <td>
+            <a id="parquet"class="d-flex align-items-center <%= datas[0].entite %>" href="/<%= datas[0].entite %>?d=<%= dossier.id %>&ajout=BienMobilier" style="background-color: rgba(255, 255, 255, 0)">
+              <%= dossier.datearrivee %>
+            </a>
+            <a id="siege"class="d-flex align-items-center <%= datas[0].entite %>" href="/<%= datas[0].entite %>?d=<%= dossier.id %>&ajout=Confirmationdesaisie" style="background-color: rgba(255, 255, 255, 0)">
+              <%= dossier.datearrivee %>
+            </a>
+          </td>
+          <td class="text-center">
+            <i id="modifier" class="bi bi-pencil-square" data-bs-toggle="modal" data-bs-target="#modificationliste<%= dossier.id %>" style="color: rgb(0, 0, 255);-color: rgba(255, 255, 255, 0); font-size: 20px;cursor: pointer;"></i>
+          </td>
+          <td class="text-center">
+            <i id="supprimer" class="bi bi-trash3 " data-bs-toggle="modal" data-bs-target="#suppressionliste<%= dossier.id %>" style="color: rgb(255, 0, 0);background-color: rgba(255, 255, 255, 0); font-size: 20px; cursor: pointer;"></i>
+          </td>
+          <td class="text-center">
+            <!-- <button type="button" class="btn btn-outline-warning" onclick="affichepdf('<%- //dossier.id %>')">Imprimer</button> -->
+            <a href="imprimerpdf?id=<%- dossier.id %>" target="_blank" style="text-decoration: none;">
+              <i id="imprimer" class="bi bi-file-pdf text-danger" style="background-color: rgba(255, 255, 255, 0); font-size: 20px; cursor: pointer;"></i>
+              <span class="couleur-bleu"><%- dossier.id %>-CSCA-<%- dossier.entite%>.pdf</span>
+            </a>
+          </td>
+<div class="modal fade" style="background-color: rgba(255, 255, 255, 0.1);" id="suppressionliste<%= dossier.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header bgc-bleu">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Suppression</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form>
+                <div class="modal-body">
+                  <h4 class="form-outline mb-1 has-validation text-aling-center" id="divsuppression">
+                    Dossier : <%= dossier.id %>/CSCA
+                  </h4>
+                </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-bleu" onclick="supprimer('<%= dossier.id %>')">Supprimer</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+        </div>
+        <div class="modal fade" style="background-color: rgba(255, 255, 255, 0.1);" id="modificationliste<%= dossier.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header bgc-bleu">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modification de Dossier</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form class="row" id="modifierdossier" action="/modifierdossier" method="post">
+                <div class="modal-body">
+                  <input type="text" name="id_dossier" id="id_dossier" value="<%= dossier.id %>" hidden>
+                    <div class="form-outline mb-1 has-validation col-md-12">
+                      <div class="input-group">
+                        <input
+                          value="<%= dossier.datearrivee %>"
+                          type="date"
+                          class="form-control form-control-lg shadow-sm"
+                          id="datearrivee"
+                          name="datearrivee"
+                          placeholder="Date de l'infraction"/>
+                      </div>
+                      <label for="datearrivee" class="form-label mt-1">Date d'arrivée</label>
+                    </div>
+                    <div class="form-outline mb-1 has-validation col-md-12">
+                      <div class="input-group">
+                        <input
+                          value="<%= dossier.numeropv %>"
+                          type="text"
+                          class="form-control form-control-lg shadow-sm"
+                          id="numeropv"
+                          name="numeropv"
+                          placeholder="Numéro PV"/>
+                      </div>
+                      <label for="numeropv" class="form-label mt-1">Numéro PV</label>
+                    </div>
+                    <div class="form-outline mb-1 has-validation col-md-12">
+                      <div class="input-group">
+                        <input
+                          value="<%= dossier.numerorp %>"
+                          type="text"
+                          class="form-control form-control-lg shadow-sm"
+                          id="numerorp"
+                          name="numerorp"
+                          placeholder="Numéro de RP en cours"/>
+                      </div>
+                      <label for="numerorp" class="form-label mt-1">Numéro de RP en cours</label>
+                    </div>
+                    <div class="form-outline mb-1 has-validation col-md-12">
+                      <div class="input-group">
+                  
+                  
+                        <select id="infraction" name="infraction" class="form-select form-select-lg shadow-sm">
+                          <option value="<%= dossier.infraction %>"><%= dossier.infraction %></option>
+                          <optgroup label="CORRUPTION et INFRACTIONS ASSIMILEES" id="CIA">
+                            <option id='CNC' value="Concussion">Concussion</option>
+                            <option id='EFI' value="Exonération et franchise illégale">Exonération et franchise illégale</option>
+                            <option id='PAI' value="Prise d'avantages injustifiés">Prise d'avantages injustifiés</option>
+                            <option id='PEP' value="Prise d'emploi prohibé">Prise d'emploi prohibé</option>
+                            <option id='PAV' value="Favoritisme">Favoritisme</option>
+                            <option id='CIQ' value="Commerce incompatible avec la qualité">Commerce incompatible avec la qualité</option>
+                            <option id='CRP' value="Corruption">Corruption</option>
+                            <option id='CRPa' value="Corruption active">Corruption active</option>
+                            <option id='CRPp' value="Corruption passive">Corruption passive</option>
+                            <option id='TRI' value="Trafic d'influence">Trafic d'influence</option>
+                            <option id='ABF' value="Abus de fonction">Abus de fonction</option>
+                            <option id='CFI' value="Conflit d'intérêts">Conflit d'intérêts</option>
+                            <option id='KDO' value="Cadeaux">Cadeaux</option>
+                            <option id='ERI' value="Enrichissement illicite">Enrichissement illicite</option>
+                            <option id='DFP' value="Défaut de déclaration de patrimoine">Défaut de déclaration de patrimoine</option>
+                            <option id='DAB' value="Dénonciation abusive">Dénonciation abusive</option>
+                            <option id='ABS' value="Abus des biens sociaux">Abus des biens sociaux</option>
+                            <option id='ABC' value="Abus de confiance">Abus de confiance</option>
+                          </optgroup>
+                          <optgroup label="BLANCHIMENT DE CAPITAUX" id="LBC">
+                            <option id='LBC' value="Blanchiment des capitaux">Blanchiment des capitaux</option>
+                          </optgroup>
+                          <optgroup label="INFRACTION ECONOMIQUE ET FINANCIERE" id="IEF">
+                            <option id='DDPri' value="Détournement de deniers privés">Détournement de deniers privés</option>
+                            <option id='DDP' value="Détournement de deniers publics">Détournement de deniers publics</option>
+                            <option id='CHG' value="Changes">Changes</option>
+                            <option id='CNR' value="Concurrence">Concurrence</option>
+                            <option id='COM' value="Sociétés commerciales">Sociétés commerciales</option>
+                            <option id='FAU' value="Infraction de faux">Infraction de faux</option>
+                            <option id='EXQ' value="Escroquerie">Escroquerie</option>
+                          </optgroup>
+                          <optgroup label="INFRACTIONS FISCALES" id="IFD">
+                            <option id='CGI' value="Code Général des Impôts">Code Général des Impôts</option>
+                          </optgroup>
+                          <optgroup label="INFRACTIONS DOUANIERES" id="AIF">
+                            <option id='DOU' value="Douanes">Douanes</option>
+                          </optgroup>
+                          <optgroup label="AUTRES INFRACTIONS">
+                            <option id='TER' value="Terrorisme">Terrorisme</option>
+                            <option id='RPR' value="Représailles">Représailles</option>
+                            <option id='RID' value="Révélation d'identité d'un témoin anonyme">Révélation d'identité d'un témoin anonyme</option>
+                            <option id='CTO' value="Criminalité transnationale organisée">Criminalité transnationale organisée</option>
+                            <option id='CYB' value="Cybercriminalité">Cybercriminalité</option>
+                            <option id='STUp' value="Stupéfiants">Stupéfiants</option>
+                            <option id='PCAp' value="Procédures collectives d'apurement du Passif">Procédures collectives d'apurement du Passif</option>
+                            <option id='PCH' value="Pêche">Pêche</option>
+                            <option id='GAP' value="Gestion des aires Protégées">Gestion des aires Protégées</option>
+                            <option id='CIF' value="Commerce International des espèces de faune et flore sauvages">Commerce International des espèces de faune et flore sauvages</option>
+                            <option id='MIN' value="Minier">Minier</option>
+                            <option id='POL' value="Politique de gestion et de contrôle des pollutions industielles">Politique de gestion et de contrôle des pollutions industielles</option>
+                            <option id='ARM' value="Armement">Armement</option>
+                            <option id='ICP' value="Infraction au code pétrolier">Infraction au code pétrolier</option>
+                            <option id='CHM' value="Armes chimiques">Armes chimiques</option>
+                            <option id='TEH' value="Vente d'organes et de trafic d'être humain">Vente d'organes et de trafic d'être humain</option>
+                          </optgroup>
+                        </select>
+                  
+                      </div>
+                      <label for="infraction" class="form-label mt-1">Infraction</label>
+                    </div>
+                    <div class="form-outline mb-1 has-validation col-md-12">
+                      <div class="input-group">
+                        <select
+                          id="demandeur"
+                          name="demandeur"
+                          class="form-select form-select-lg shadow-sm"
+                        >
+                          <option value="<%= dossier.demandeur %>"><%= dossier.demandeur %></option>
+                          <option value="JI">JI</option>
+                          <option value="MP">MP</option>
+                        </select>
+                      </div>
+                      <label for="demandeur" class="form-label mt-1">Demandeur</label>
+                    </div>
+                    <div class="form-outline mb-1 has-validation col-md-12">
+                      <div class="input-group">
+                        <select
+                          id="objetdedemande"
+                          name="objetdedemande"
+                          class="form-select form-select-lg shadow-sm"
+                        >
+                          <option value="<%= dossier.objetdedemande %>"><%= dossier.objetdedemande %></option>
+                          <option value="Confirmation">Confirmation</option>
+                          <option value="Main levée">Main levée</option>
+                          <option value="Saisie">Saisie</option>
+                        </select>
+                      </div>
+                      <label for="objetdedemande" class="form-label mt-1">Objet de demande</label>
+                    </div>
+                    <div class="form-outline mb-1 has-validation col-md-12">
+                      <div class="input-group">
+                        <input
+                        value="<%= dossier.date1ere %>"
+                          type="date"
+                          class="form-control form-control-lg shadow-sm"
+                          id="date1ere"
+                          name="date1ere"
+                          placeholder="Date de la première infraction"/>
+                        <input
+                          value="<%= dossier.date2eme %>"
+                          type="date"
+                          class="form-control form-control-lg shadow-sm"
+                          id="date2eme"
+                          name="date2eme"
+                          placeholder="Date de la deuxième infraction"
+                        />
+                      </div>
+                      <label for="date1ere" class="form-label mt-1">Date d'infraction</label>
+                    </div>
+                    <div class="form-outline mb-1 has-validation col-md-12">
+                      <div class="input-group">
+                        <input
+                          value="<%= dossier.lieu %>"
+                          type="text"
+                          class="form-control form-control-lg shadow-sm"
+                          id="lieu"
+                          name="lieu"
+                          placeholder="Lieu de l'infraction"/>
+                      </div>
+                      <label for="lieu" class="form-label mt-1">Lieu de l'infraction</label>
+                    </div>
+                </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-bleu">Modifier</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+        </div>
+
+        </tr>
+        <% } }} %>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!--/ content row -->
+  </div>
+</main>
+
+  <script>
+    const a_parquets = document.querySelectorAll("#parquet.siege")
+    const a_sieges = document.querySelectorAll("#siege.parquet")
+    const h1 = document.querySelector("#nombreDossier")
+    const tr = document.querySelectorAll("#tbody tr")
+    h1.textContent=tr.length
+    a_parquets.forEach((a_parquet)=>{
+      a_parquet.classList.add("d-none")
+    })
+    a_sieges.forEach((a_siege)=>{
+      a_siege.classList.add("d-none")
+    })
+    function supprimer(id){
+        let url_supprimer ="supprimer/"+id
+        fetch(url_supprimer,{method:"DELETE"}).then((reponse)=>reponse.json()).then((donne)=>window.location.href=donne.root).catch((err)=>console.log(err))
+    }
+    function affichepdf(id) {
+      
+      // Envoyer une requête AJAX au serveur pour supprimer l'utilisateur
+      fetch(`/affichepdf/${id}`, {
+      method: 'POST',
+    }).then((response) => {
+      // Mettre à jour l'interface utilisateur en fonction de la réponse du serveur
+      if (response.ok) {
+        // Afficher un message de confirmation
+        // Recharger la page
+        window.location.reload();
+      } else {
+        // Afficher un message d'erreur
+      }
+    });
+  }
+  </script>

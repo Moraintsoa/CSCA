@@ -17,10 +17,13 @@
           <div class="form-outline mb-4 has-validation" id="divnipreset">
             <div class="input-group">
               <select class="form-select" id="organisationreset" name="organisationreset">
-                <option value="">Votre organisation</option>
-                <option value="PAC">PAC</option>
-                <option value="BIANCO">BIANCO</option>
-                <option value="SAMFIN">SAMFIN</option>
+                <option value="">Votre Juridiction</option>
+                <option value="PAC-Antananarivo">PAC-Antananarivo</option>
+                  <option value="PAC-Antsiranana">PAC-Antsiranana</option>
+                  <option value="PAC-Fianarantsoa">PAC-Fianarantsoa</option>
+                  <option value="PAC-Mahajanga">PAC-Mahajanga</option>
+                  <option value="PAC-Toamasina">PAC-Toamasina</option>
+                  <option value="PAC-Toliara">PAC-Toliara</option>
               </select>
               <input type="number" name="nipreset" id="nipreset" class="form-control form-control-lg shadow-sm" placeholder="ex: 0001">
             </div>
@@ -30,7 +33,7 @@
           <div class="form-outline mb-4  has-validation">
             <input type="email" id="emailreset" name="emailreset" class="form-control form-control-lg shadow-sm"
               placeholder="ex : monemail@gmail.com" />
-            <label class="form-label mt-1" id="labelemailreset" for="emailreset">Email avec lequel vous avez créé votre compte</label>
+            <label class="form-label mt-1" id="labelemailreset" for="emailreset">Votre email avec lequel vous avez créé votre compte</label>
           </div>
           <% if (errorMessage) { %>
             <div class="alert alert-danger py-1">

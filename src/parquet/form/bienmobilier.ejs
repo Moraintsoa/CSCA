@@ -1,90 +1,53 @@
 <style>
     div label.form-label {font-size: 13px;}
+    .bg-bleu, nav.bg-body-tertiary * {background-color: #032F54;color: #fff;}
+    .bg-blanc{background-color: #fff;color: #032F54;}
     .btn-bleu{background-color: #032F54;color: #fff;}
     .btn-bleu:hover{background-color: #04467c;color: #fff;}
-    </style>
-    <form class="row" id="ajoutdossier">
-        <div class="d-flex align-items-center mb-2">
-            <h3>Ajout de Bien Mobilier</h3>
+</style>
+<%- include("../navmenu.ejs") %>
+<form class="row" id="ajoutbienmobilier" action="/bienMobilier" method="post">
+    <% if (lesdonnees) { for (const donnee of lesdonnees){%>
+    <input type="text" id="id_csca" name="id_csca" value="<%= donnee.referencecsca %>" hidden>
+    <div class="form-outline mb-1 has-validation col-md-6" id="">
+        <div class="input-group">
+            <select id="type" name="type" class="form-select form-select-lg shadow-sm" placeholder="Sélectionner...">
+                <option class="select_default_value" value="<%= donnee.type %>"><%= donnee.type %></option>
+                <option value="4x4">4x4</option>
+                <option value="Moto">Moto</option>
+                <option value="Sprinter">Sprinter</option>
+                <option value="Sterex">Sterex</option>
+                <option value="Kango">Kango</option>
+            </select>
         </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <input type="number" class="form-control form-control-lg shadow-sm" id="numerorp">
-            </div>
-            <label for="numerorp" class="form-label mt-1">Numero RP</label>
+        <label for="type" class="form-label mt-1">Type</label>
+    </div>
+    <div class="form-outline mb-1 has-validation col-md-6" id="">
+        <div class="input-group">
+            <input type="text" class="form-control form-control-lg shadow-sm" id="marque" name="marque" placeholder="Marque" value="<%= donnee.marque %>">
         </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <input type="date" class="form-control form-control-lg shadow-sm" id="dateinfraction">
-            </div>
-            <label for="dateinfraction" class="form-label mt-1">Date de l'infraction</label>
+        <label for="marque" class="form-label mt-1">Marque</label>
+    </div>
+    <div class="form-outline mb-1 has-validation col-md-6" id="">
+        <div class="input-group">
+            <input type="text" class="form-control form-control-lg shadow-sm" id="immatriculation" name="immatriculation" placeholder="Immatriculation" value="<%= donnee.Immatriculation %>">
         </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <input type="text" class="form-control form-control-lg shadow-sm" id="lieu">
-            </div>
-            <label for="lieu" class="form-label mt-1">Lieu</label>
+        <label for="immatriculation" class="form-label mt-1">Immatriculation</label>
+    </div>
+    <div class="form-outline mb-1 has-validation col-md-6" id="">
+        <div class="input-group">
+            <input type="text" class="form-control form-control-lg shadow-sm" id="nature" name="nature" placeholder="Nature" value="<%= donnee.Nature %>">
         </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <input type="text" class="form-control form-control-lg shadow-sm" id="datearrivee">
-            </div>
-            <label for="Referencecsca" class="form-label mt-1">Reference CSCA</label>
+        <label for="nature" class="form-label mt-1">Nature</label>
+    </div>
+    <div class="form-outline mb-1 has-validation col-md-6" id="">
+        <div class="input-group">
+            <input type="number" class="form-control form-control-lg shadow-sm" id="valeur_estimative" name="valeur_estimative" placeholder="Valeur estimative" value="<%= donnee.valeurestimatif %>">
         </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <select id="infraction" class="form-select form-select-lg shadow-sm">
-                    <option value="">Choix</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-            </div>
-            <label for="infraction" class="form-label mt-1">Infraction</label>
-        </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <select id="objetdedemande " class="form-select form-select-lg shadow-sm">
-                    <option value="">Choix</option>
-                    <option value="confirmation">confirmation</option>
-                    <option value="mainlevee ">Main levée</option>
-                    <option value="saisie">Saisie</option>
-                </select>
-            </div>
-            <label for="objetdedemande " class="form-label mt-1">Objet de demande </label>
-        </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <input type="text" class="form-control form-control-lg shadow-sm" id="datearrivee">
-            </div>
-            <label for="Referencecsca" class="form-label mt-1">Numero de PV</label>
-        </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <select id="numinfraction" class="form-select form-select-lg shadow-sm">
-                    <option value="">Choix</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-            </div>
-            <label for="numinfraction" class="form-label mt-1">Numero d'infraction</label>
-        </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <select id="demandeur" class="form-select form-select-lg shadow-sm">
-                    <option value="">Choix</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-            </div>
-            <label for="demandeur" class="form-label mt-1">Demandeur</label>
-        </div>
-        <div class="text-center text-lg-start mt-4 pt-2">
-            <button type="submit" class="btn btn-bleu btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Enregistrer</button>
-        </div>
-    </form>
+        <label for="valeur_estimative" class="form-label mt-1">Valeur estimative</label>
+    </div>
+    <div class="text-center text-lg-start mt-4 pt-2">
+        <button type="submit" class="btn btn-bleu btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Enregistrer</button>
+    </div>
+    <% }} %>
+</form>

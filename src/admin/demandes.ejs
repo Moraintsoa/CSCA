@@ -1,0 +1,126 @@
+<main class="mt-4">
+    <div class="container-fluid px-md-4">
+        <!-- content row -->    
+        <div class="row mb-4 g-4">
+            <div class="col">
+                <div class="card border-5 border-primary">
+                    <div class="card-body bgc-bleu">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="bg-primary py-3 px-4 rounded-3">
+                                <i class="bi bi-person-fill-add size-2"></i>
+                            </div>
+  
+                            <div class="text-end">
+                                <h1 class="m-0">
+                                    <% if (lesutilisateurs) {
+                                        let i=0;
+                                        for (const utilisateur of lesutilisateurs){
+                                            if (utilisateur.etat_du_compte==="enattente"){
+                                                i++
+                                            }}%>
+                                        <%- i %>
+                                </h1>
+                                <div class="text-capitalize">
+                                        
+                                    <% if (i>1) { %>
+                                        Demandes en attente
+                                    <%} else{%>
+                                        Demande en attente
+                                    <%}%>
+                                </div>
+                                <%}%>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ content row -->   
+  
+        <!-- content row -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-table">
+                    <div class="card-header bgc-bleu">
+                        <div class="d-flex justify-content-between align-items-center w-100">
+                            <small>
+                                <strong>Liste de demande d'inscription</strong>
+                            </small>
+  
+                            <a href="#!" class="btn btn-sm btn-mode"></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table text-center table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Nom
+                                        </th>
+                                        <th>
+                                            Prénom
+                                        </th>
+                                        <th>
+                                            Email
+                                        </th>
+                                        <th>
+                                            Accepter
+                                        </th>
+                                        
+                                        <th>
+                                            Refuser
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <% if (lesutilisateurs) {%> <% for (const utilisateur of lesutilisateurs){ if (utilisateur.etat_du_compte==="enattente") {%>
+                                    <tr>
+                                      <td><%- utilisateur.nom %></td>
+                                      <td><%- utilisateur.prenom %></td>
+                                      <td><%- utilisateur.email %></td>
+                                      <td><button type="button" class="btn btn-outline-success" onclick="accepterUtilisateur('<%- utilisateur.id %>')">Accepter</button></td>
+                                      <td><button type="button" class="btn btn-outline-danger" onclick="refuserUtilisateur('<%- utilisateur.id %>')">Refuser</button></td>
+                                    </tr>
+                                   <%}}}%>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ content row -->
+    </div>
+  </main>
+  <script>
+    function accepterUtilisateur(id){
+        fetch(`/accepter/${id}`, {
+    method: 'POST',
+  }).then((response) => {
+    // Mettre à jour l'interface utilisateur en fonction de la réponse du serveur
+    if (response.ok) {
+      // Afficher un message de confirmation
+      // Recharger la page
+      window.location.reload();
+    } else {
+      // Afficher un message d'erreur
+    }
+  });
+    }
+    function refuserUtilisateur(id) {
+  // Envoyer une requête AJAX au serveur pour supprimer l'utilisateur
+  fetch(`/bloquer/${id}`, {
+    method: 'POST',
+  }).then((response) => {
+    // Mettre à jour l'interface utilisateur en fonction de la réponse du serveur
+    if (response.ok) {
+      // Afficher un message de confirmation
+      // Recharger la page
+      window.location.reload();
+    } else {
+      // Afficher un message d'erreur
+    }
+  });
+}
+  </script>

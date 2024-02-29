@@ -1,0 +1,152 @@
+<style>
+  div label.form-label {
+    font-size: 13px;
+  }
+  .bg-bleu {
+    background-color: #032F54;
+    color: #fff;
+  }
+  .btn-bleu {
+    background-color: #032F54;
+    color: #fff;
+  }
+  .btn-bleu:hover {
+    background-color: #04467C;
+    color: #fff;
+  }
+</style>
+<%- include("../navmenu.ejs") %>
+<form class="row mt-4" id="" action="/confirmationdesaisie" method="post">
+  <% if (lesdonnees) { for (const donnee of lesdonnees){%>
+  <input type="text" id="id_csca" name="id_csca" value="<%= donnee.referencecsca %>" hidden>
+  <div class="form-outline mb-1 has-validation col-md-6">
+    <div class="input-group">
+      <input value="<%= donnee.datearrivee %>" type="date" class="form-control form-control-lg shadow-sm" id="datearrivee" name="datearrivee">
+    </div>
+    <label for="datearrivee" class="form-label mt-1">Date d’arrivée à la CSCA</label>
+  </div>
+  <div class="form-outline mb-1 has-validation col-md-6">
+    <div class="input-group">
+      <select id="infraction" name="infraction" class="form-select form-select-lg shadow-sm">
+        <option class="select_default_value" value="<%= donnee.infraction %>"><%= donnee.infraction %></option>
+        <optgroup label="CORRUPTION et INFRACTIONS ASSIMILEES" id="CIA">
+          <option id='CNC' value="Concussion">Concussion</option>
+          <option id='EFI' value="Exonération et franchise illégale">Exonération et franchise illégale</option>
+          <option id='PAI' value="Prise d'avantages injustifiés">Prise d'avantages injustifiés</option>
+          <option id='PEP' value="Prise d'emploi prohibé">Prise d'emploi prohibé</option>
+          <option id='PAV' value="Favoritisme">Favoritisme</option>
+          <option id='CIQ' value="Commerce incompatible avec la qualité">Commerce incompatible avec la qualité</option>
+          <option id='CRP' value="Corruption">Corruption</option>
+          <option id='CRPa' value="Corruption active">Corruption active</option>
+          <option id='CRPp' value="Corruption passive">Corruption passive</option>
+          <option id='TRI' value="Trafic d'influence">Trafic d'influence</option>
+          <option id='ABF' value="Abus de fonction">Abus de fonction</option>
+          <option id='CFI' value="Conflit d'intérêts">Conflit d'intérêts</option>
+          <option id='KDO' value="Cadeaux">Cadeaux</option>
+          <option id='ERI' value="Enrichissement illicite">Enrichissement illicite</option>
+          <option id='DFP' value="Défaut de déclaration de patrimoine">Défaut de déclaration de patrimoine</option>
+          <option id='DAB' value="Dénonciation abusive">Dénonciation abusive</option>
+          <option id='ABS' value="Abus des biens sociaux">Abus des biens sociaux</option>
+          <option id='ABC' value="Abus de confiance">Abus de confiance</option>
+        </optgroup>
+        <optgroup label="BLANCHIMENT DE CAPITAUX" id="LBC">
+          <option id='LBC' value="Blanchiment des capitaux">Blanchiment des capitaux</option>
+        </optgroup>
+        <optgroup label="INFRACTION ECONOMIQUE ET FINANCIERE" id="IEF">
+          <option id='DDPri' value="Détournement de deniers privés">Détournement de deniers privés</option>
+          <option id='DDP' value="Détournement de deniers publics">Détournement de deniers publics</option>
+          <option id='CHG' value="Changes">Changes</option>
+          <option id='CNR' value="Concurrence">Concurrence</option>
+          <option id='COM' value="Sociétés commerciales">Sociétés commerciales</option>
+          <option id='FAU' value="Infraction de faux">Infraction de faux</option>
+          <option id='EXQ' value="Escroquerie">Escroquerie</option>
+        </optgroup>
+        <optgroup label="INFRACTIONS FISCALES" id="IFD">
+          <option id='CGI' value="Code Général des Impôts">Code Général des Impôts</option>
+        </optgroup>
+        <optgroup label="INFRACTIONS DOUANIERES" id="AIF">
+          <option id='DOU' value="Douanes">Douanes</option>
+        </optgroup>
+        <optgroup label="AUTRES INFRACTIONS">
+          <option id='TER' value="Terrorisme">Terrorisme</option>
+          <option id='RPR' value="Représailles">Représailles</option>
+          <option id='RID' value="Révélation d'identité d'un témoin anonyme">Révélation d'identité d'un témoin anonyme</option>
+          <option id='CTO' value="Criminalité transnationale organisée">Criminalité transnationale organisée</option>
+          <option id='CYB' value="Cybercriminalité">Cybercriminalité</option>
+          <option id='STUp' value="Stupéfiants">Stupéfiants</option>
+          <option id='PCAp' value="Procédures collectives d'apurement du Passif">Procédures collectives d'apurement du Passif</option>
+          <option id='PCH' value="Pêche">Pêche</option>
+          <option id='GAP' value="Gestion des aires Protégées">Gestion des aires Protégées</option>
+          <option id='CIF' value="Commerce International des espèces de faune et flore sauvages">Commerce International des espèces de faune et flore sauvages</option>
+          <option id='MIN' value="Minier">Minier</option>
+          <option id='POL' value="Politique de gestion et de contrôle des pollutions industielles">Politique de gestion et de contrôle des pollutions industielles</option>
+          <option id='ARM' value="Armement">Armement</option>
+          <option id='ICP' value="Infraction au code pétrolier">Infraction au code pétrolier</option>
+          <option id='CHM' value="Armes chimiques">Armes chimiques</option>
+          <option id='TEH' value="Vente d'organes et de trafic d'être humain">Vente d'organes et de trafic d'être humain</option>
+        </optgroup>
+      </select>
+    </div>
+    <label for="infraction" class="form-label mt-1">Infraction</label>
+  </div>
+
+  <div class="form-outline mb-1 has-validation col-md-6">
+    <div class="input-group">
+      <input value="<%= donnee.numpv %>" type="text" class="form-control form-control-lg shadow-sm" id="numeropv" name="numeropv" placeholder="Numero de PV" />
+    </div>
+    <label for="numeropv" class="form-label mt-1">Numero de PV</label>
+  </div>
+
+  <div class="form-outline mb-1 has-validation col-md-6">
+    <div class="input-group">
+      <select id="decision" name="decision" class="form-select form-select-lg shadow-sm">
+        <option class="select_default_value" value="<%= donnee.decision %>"><%= donnee.decision %></option>
+        <option value="Admission">Admission</option>
+        <option value="Refus">Refus</option>
+      </select>
+    </div>
+    <label for="decision" class="form-label mt-1">Decision</label>
+  </div>
+
+  <div class="form-outline mb-1 has-validation col-6">
+    <div class="input-group">
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="demandeur" id="demandeJI" value="Demande JI" />
+        <label class="form-check-label" for="demandeJI">Demande JI</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="demandeur" id="demandeMP" value="Demande MP" />
+        <label class="form-check-label" for="demandeMP">Demande MP</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" name="demandeur" id="autreAPreciser" value="Autre à préciser" />
+        <label class="form-check-label" for="autreAPreciser">Autre à préciser</label>
+      </div>
+      <div class="form-group mt-2" id="autreInput" style="display: none">
+        <input type="text" class="form-control" id="autreText" name="autreText" placeholder="Autre valeur à préciser" />
+      </div>
+    </div>
+    <label for="demandeur" class="form-label mt-1">Demandeur</label>
+  </div>
+
+  <div class="text-center text-lg-start mt-4 pt-2">
+    <button type="submit" class="btn btn-bleu btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Enregistrer</button>
+  </div>
+  <% }} %>
+</form>
+<script>
+  const checkboxOptions = document.querySelectorAll("input[type=checkbox][name=demandeur]");
+  const autreInput = document.getElementById("autreInput")
+  const affiche=document.querySelector("div[class=affiche]")
+  // const datearrivee = document.getElementById("datearrivee")
+  // datearrivee.defaultValue="12222"
+  for (const checkboxOption of checkboxOptions) {
+    checkboxOption.addEventListener("change", function () {
+      if (this.value === "Autre à préciser") {
+        autreInput.style.display = this.checked ? "block" : "none";
+      } else {
+        autreInput.style.display = "none";
+      }
+    });
+  }
+</script>

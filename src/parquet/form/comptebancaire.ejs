@@ -2,89 +2,42 @@
     div label.form-label {font-size: 13px;}
     .btn-bleu{background-color: #032F54;color: #fff;}
     .btn-bleu:hover{background-color: #04467c;color: #fff;}
-    </style>
-    <form class="row" id="ajoutdossier">
-        <div class="d-flex align-items-center mb-2">
-            <h3>Ajout de Compte Bancaire</h3>
+</style>
+<%- include("../navmenu.ejs") %>
+<form class="row" id="ajoutcomptebancaire" action="/compteBancaire" method="post">
+    <% if (lesdonnees) { for (const donnee of lesdonnees){%>
+    <input type="text" id="id_csca" name="id_csca" value="<%= donnee.referencecsca %>" hidden>
+    <div class="form-outline mb-1 has-validation col-md-6" id="">
+        <div class="input-group">
+            <select id="natureducompte" name="natureducompte" class="form-select form-select-lg shadow-sm" placeholder="Sélectionner...">
+                <option class="select_default_value" value=""><%= donnee.naturecompte %></option>
+                <option value="Banque primaire">Banque primaire</option>
+                <option value="Mobile money">Mobile money</option>
+                <option value="Autre etablissement financier">Autre etablissement financier</option>
+            </select>
         </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <input type="number" class="form-control form-control-lg shadow-sm" id="numerorp">
-            </div>
-            <label for="numerorp" class="form-label mt-1">Numero RP</label>
+        <label for="natureducompte" class="form-label mt-1">Nature du compte</label>
+    </div>
+    <div class="form-outline mb-1 has-validation col-md-6" id="">
+        <div class="input-group">
+            <input value="<%= donnee.numcompte %>" type="number" class="form-control form-control-lg shadow-sm" id="numerodecompte" name="numerodecompte" placeholder="Numéro de Compte">
         </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <input type="date" class="form-control form-control-lg shadow-sm" id="dateinfraction">
-            </div>
-            <label for="dateinfraction" class="form-label mt-1">Date de l'infraction</label>
+        <label for="numerodecompte" class="form-label mt-1">Numéro de Compte</label>
+    </div>
+    <div class="form-outline mb-1 has-validation col-md-6" id="">
+        <div class="input-group">
+            <input value="<%= donnee.domiciliations %>" type="text" class="form-control form-control-lg shadow-sm" id="domiciliations" name="domiciliations" placeholder="Domiciliations">
         </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <input type="text" class="form-control form-control-lg shadow-sm" id="lieu">
-            </div>
-            <label for="lieu" class="form-label mt-1">Lieu</label>
+        <label for="domiciliations" class="form-label mt-1">Domiciliations</label>
+    </div>
+    <div class="form-outline mb-1 has-validation col-md-6" id="">
+        <div class="input-group">
+            <input value="<%= donnee.valeurgeleestimee %>" type="number" class="form-control form-control-lg shadow-sm" id="valeurgeléeestimée" name="valeurgeleeestimee" placeholder="Valeur gelée estimée">
         </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <input type="text" class="form-control form-control-lg shadow-sm" id="datearrivee">
-            </div>
-            <label for="Referencecsca" class="form-label mt-1">Reference CSCA</label>
-        </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <select id="infraction" class="form-select form-select-lg shadow-sm">
-                    <option value="">Choix</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-            </div>
-            <label for="infraction" class="form-label mt-1">Infraction</label>
-        </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <select id="objetdedemande " class="form-select form-select-lg shadow-sm">
-                    <option value="">Choix</option>
-                    <option value="confirmation">confirmation</option>
-                    <option value="mainlevee ">Main levée</option>
-                    <option value="saisie">Saisie</option>
-                </select>
-            </div>
-            <label for="objetdedemande " class="form-label mt-1">Objet de demande </label>
-        </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <input type="text" class="form-control form-control-lg shadow-sm" id="datearrivee">
-            </div>
-            <label for="Referencecsca" class="form-label mt-1">Numero de PV</label>
-        </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <select id="numinfraction" class="form-select form-select-lg shadow-sm">
-                    <option value="">Choix</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-            </div>
-            <label for="numinfraction" class="form-label mt-1">Numero d'infraction</label>
-        </div>
-        <div class="form-outline mb-1 has-validation col-md-6" id="">
-            <div class="input-group">
-                <select id="demandeur" class="form-select form-select-lg shadow-sm">
-                    <option value="">Choix</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-            </div>
-            <label for="demandeur" class="form-label mt-1">Demandeur</label>
-        </div>
-        <div class="text-center text-lg-start mt-4 pt-2">
-            <button type="submit" class="btn btn-bleu btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Enregistrer</button>
-        </div>
-    </form>
+        <label for="valeurgeléeestimée" class="form-label mt-1">Valeur gelée estimée</label>
+    </div>
+    <div class="text-center text-lg-start mt-4 pt-2">
+        <button type="submit" class="btn btn-bleu btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Enregistrer</button>
+    </div>
+    <% }} %>
+</form>

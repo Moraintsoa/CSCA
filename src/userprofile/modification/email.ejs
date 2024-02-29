@@ -1,0 +1,24 @@
+<div class="modal fade" style="background-color: rgba(255, 255, 255, 0.1);" id="emailedit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bgc-bleu">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Email</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="/updatemail" method="post">
+            <% if (datas) { %>
+        <div class="modal-body">
+          <div class="form-outline mb-1 has-validation" id="divemailedit">
+            <input type="email" id="emailedit" name="emailedit" class="form-control form-control-lg shadow-sm" value="<%= datas[0].email %>"/>
+            <label class="mt-1 form-label" for="emailedit" id="labelemail">Votre email</label>
+          </div>
+        </div>
+            <% } %>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-bleu">Modifier</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

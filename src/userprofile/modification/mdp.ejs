@@ -1,0 +1,30 @@
+<div class="modal fade" style="background-color: rgba(255, 255, 255, 0.1);" id="mdpedit" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header bgc-bleu">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Mot de passe</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="/updatmdp" method="post">
+        <div class="modal-body">
+          <div class="form-outline mb-1 has-validation" id="divmdpancienedit">
+            <input type="password" id="mdpancienedit" name="mdpancienedit" class="form-control form-control-lg shadow-sm"/>
+            <label class="mt-1 form-label" for="mdpancienedit" id="labelemail">Votre ancien mot de passe</label>
+          </div>
+          <div class="form-outline mb-1 has-validation" id="divnvmdpedit">
+            <input type="password" id="nvmdpedit" name="nvmdpedit" class="form-control form-control-lg shadow-sm"/>
+            <label class="mt-1 form-label" for="nvmdpedit" id="labelemail">Nouveau mot de passe</label>
+          </div>
+          <div class="form-outline mb-1 has-validation" id="divcnvmdpedit">
+            <input type="password" id="cnvmdpedit" name="cnvmdpedit" class="form-control form-control-lg shadow-sm"/>
+            <label class="mt-1 form-label" for="cnvmdpedit" id="labelemail">Confirmer le nouveau mot de passe</label>
+          </div>
+        </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-bleu">Modifier</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

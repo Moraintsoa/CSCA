@@ -1,0 +1,99 @@
+<style>
+    body{background-color: #fff;}
+    #Page *{font-family: 'Times New Roman', Times, serif;}
+    u{font-weight: bold;}
+</style>
+<div id="Page" class="container">
+    <img style="z-index: 100;" src="/img/pdf_image/republique.jpg" height="100px" width="140px" class="mx-auto d-block mt-4" alt="...">
+    <img style="z-index: 100;" src="/img/pdf_image/justice.png" height="80px" width="80px" class="rounded float-start" alt="...">
+    <img src="/img/pdf_image/pac.png" height="80px" width="80px" class="rounded float-end" alt="...">
+    <div class="text-center mt-4">
+        <p class="" style="font-size: 14pt;">DIRECTION DE COORDINATION</br>NATIONALE DES PÔLES ANTI-CORRUPTION</p>
+        <p class="" style="font-size: 14pt;">-------------------------</p>
+        <p class="" style="font-size: 14pt;font-weight: bold;">CHAMBRE DE SAISIE ET</br>CONFISCATION DES AVOIRS (CSCA)</p>
+    </div>
+    <div class="text-center mt-5" >
+        <% if(UnDossier){%>
+            <%for( let i of UnDossier){ %>
+        <p class="" style="font-size: 14pt;">Dossier N°<u><%- i.id %></u>/CSCA/<u><%- i.entite %></u></p>
+        <div style="font-size: 12pt;">
+            <p>
+                Date d'arrivée : <u><%- i.datearrivee %></u>  Numéro PV : <u><%- i.numeropv %></u> Numéro de RP en cours : <u><%- i.numerorp %></u>
+                Infraction : <u><%- i.infraction %></u>
+                Demandeur : <u><%- i.demandeur %></u>  Objet de demande : <u><%- i.objetdedemande %></u>
+                Date d'infraction : <u><%- i.date1ere %></u>  au <u><%- i.date2eme %></u>
+                Lieu de l'infraction : <u><%- i.lieu %></u>.
+            </p>
+        </div>
+        <%}}%>
+    </div>
+    <% 
+    if (UnDossier[0].entite === 'siege') {
+        Donneespartables = [confirmationdesaisie, mainlevee, oppositionauxos, confiscationcsca, oppositionauxconfiscationcsca]
+      }
+      else if (UnDossier[0].entite === 'parquet') {
+        Donneespartables = [bienmobilier,bienimmobilier,comptebancaire,personnephysique,personnemorale]
+      }
+    %>
+    <% if(LesEntites){%>
+        <% for (let[key,Entite] of Object.entries(LesEntites)){
+            let iteration =0
+            for (let[cle,les] of Object.entries(Entite)){
+                if(UnDossier[0].entite === key){%>
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card card-table">
+                <div class="card-header bgc-bleu">
+                    <div class="d-flex justify-content-between align-items-center w-100">
+                        <small>
+                            <strong><%- cle %></strong>
+                        </small>
+
+                        <a href="" class="btn btn-sm btn-mode"></a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table text-center table-sm">
+                            <thead>
+                                <tr>
+                                    <% for(le of les){ %>
+                                    <th>
+                                        <%- le %>
+                                    </th>
+                                    <% } %>
+                                    <!-- <th>
+                                        Infraction
+                                    </th>
+                                    <th>
+                                        Numero de PV
+                                    </th>
+                                    <th>
+                                        Decision
+                                    </th>
+                                    <th>
+                                        Demandeur
+                                    </th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <% if(Donneespartables){ %>
+                                    <% for (is of Donneespartables[iteration]){
+                                          for ([i,v] of Object.entries(is)){%>
+
+                                            <%if(i!=='referencecsca' && i !=='entite') {%>
+                                            <td><%- v %></td>
+                                            <%}%>
+                                    <%}}}%>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% iteration++ }}}}%>
+
+</div>
